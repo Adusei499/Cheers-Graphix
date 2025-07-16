@@ -75,7 +75,11 @@ body {
 .hero{
   margin-top: 100px;
   background-color: red;
-  height:100vh;
+  height:72vh;
+}
+
+.overlay-text{
+  margin-top: 30px;
 }
 
 
@@ -108,10 +112,8 @@ body {
 
 
 @media (max-width: 768px) {
-  .main-body {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
+
+  
 }
 
 @media (max-width : 600px){
@@ -132,6 +134,7 @@ body {
   }
   .hero{
     margin-top: 50px;
+    height: 50vh;
   }
 
   #main-footer{
