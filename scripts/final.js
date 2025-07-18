@@ -48,3 +48,22 @@
 
     // Initialize auto-slide
     startAutoSlide();
+
+    function scrollToSection(sectionId, event) {
+  event.preventDefault();
+  const section = document.getElementById(sectionId);
+  if (section) {
+    section.scrollIntoView({ 
+      behavior: 'smooth',
+      block: 'start'
+    });
+  }
+}
+
+// Scroll to top (brand name click)
+function scrollToTop() {
+  window.scrollTo({ 
+    top: 0, 
+    behavior: 'smooth' 
+  });
+}

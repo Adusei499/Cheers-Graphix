@@ -5,17 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Cheers Graphix - Creative Design Studio</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/styles/final.css" />
+  <link rel="stylesheet" href="/styles/index.css" />
+  <link rel="stylesheet" href="/styles/about.css">
+  <link rel="stylesheet" href="/styles/services.css">
 </head>
 
 <body>
   <header class="header">
-    <div class="brand-name">Cheers Graphix</div>
+    <div class="brand-name" onclick = "scrollToTop()">Cheers Graphix</div>
     <nav class="info-links">
-      <a href="#about" class="nav-link">ABOUT</a>
-      <a class="nav-link" href="/pages/servicepages.html">SERVICE</a>
-      <a class="nav-link" href="/pages/portfoliopage.html">PORTFOLIO</a>
-      <a class="nav-link" href="/pages/contactpage.html">CONTACT</a>
+      <a href="#about" class="nav-link" onclick="scrollToSection('about', event)">ABOUT</a>
+      <a class="nav-link" href="#services" onclick="scrollToSection('services', event)">SERVICES</a>
+      <a class="nav-link" href="#portfolio">PORTFOLIO</a>
+      <a class="nav-link" href="#contact">CONTACT</a>
     </nav>
   </header>
 
@@ -56,13 +58,90 @@
     </div>
   </main>
 
+  <div class="about-wrapper">
+    <section id="about"class="about-info">
+      <h1>About Cheers Graphix</h1>
+      <p>
+        Cheers Graphix is a premier visual design studio dedicated to helping brands communicate with clarity, creativity, and impact. We specialize in strategic branding, custom visual solutions, and compelling digital experiences that resonate with your audience and drive results.
+      </p>
+      <p class="motto">Motto: "Intelligence Made Visible"</p>
+
+      <h2>Our Mission</h2>
+      <p>
+        We empower entrepreneurs, businesses, and creative professionals through thoughtful, strategic design solutions. Every brand has a unique story to tell, and we're passionate about bringing that story to life through exceptional visual communication that connects, inspires, and converts.
+      </p>
+
+      <h2>Our Expertise</h2>
+      <p>
+        With years of experience in the design industry, we combine artistic vision with strategic thinking to deliver solutions that not only look stunning but also achieve your business objectives. From startup branding to established company rebrands, we approach every project with fresh perspective and meticulous attention to detail.
+      </p>
+
+
+      <h2>Why Choose Cheers Graphix?</h2>
+      <div class="why-choose-us">
+        <div class="reason">
+          <h3>Strategic Approach</h3>
+          <p>We don't just create pretty designs—we craft <b> strategic visual solutions</b> that align with your business goals and target audience.</p>
+        </div>
+        <div class="reason">
+          <h3>Creative Excellence</h3>
+          <p>Our team brings fresh, <b>innovative ideas</b> to every project, ensuring your brand stands out in today's competitive marketplace.</p>
+        </div>
+        <div class="reason">
+          <h3>Collaborative Process</h3>
+          <p>We work closely with our clients throughout the design process, ensuring <b>your vision</b> is perfectly realized and exceeded.</p>
+        </div>
+        <div class="reason">
+          <h3>Affordable Pricing</h3>
+          <p>Premium design doesn't have to come at a premium price. Cheers Graphix offers <b> competitive pricing packages </b> for startups, businesses and individuals </p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+
+   <section id="services" class="section">
+    <div class="service-content">
+      <h1>Our Services</h1>
+      <p>We offer a comprehensive range of design services to meet all your creative needs. From concept to completion, we're here to bring your vision to life.</p>
+      
+      <div class="service-grid">
+        <div class="service-card">
+          <h3>Brand Identity Design</h3>
+          <p>Create a memorable brand identity that reflects your values and resonates with your target audience. We design logos, color schemes, and brand guidelines.</p>
+        </div>
+        <div class="service-card">
+          <h3>Web Design</h3>
+          <p>Modern, responsive websites that not only look great but also provide an exceptional user experience across all devices.</p>
+        </div>
+        <div class="service-card">
+          <h3>Print Design</h3>
+          <p>From business cards to brochures, we create print materials that leave a lasting impression and communicate your message effectively.</p>
+        </div>
+        <div class="service-card">
+          <h3>Digital Marketing Graphics</h3>
+          <p>Social media graphics, banner ads, and digital campaigns designed to engage your audience and drive conversions.</p>
+        </div>
+        <div class="service-card">
+          <h3>Packaging Design</h3>
+          <p>Eye-catching packaging that stands out on shelves and enhances your product's appeal to consumers.</p>
+        </div>
+        <div class="service-card">
+          <h3>Illustration & Animation</h3>
+          <p>Custom illustrations and animations that bring your ideas to life and captivate your audience.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
   <footer id="main-footer">
     <div class="footer-content">
       <p>© 2025 Cheers Graphix. All rights reserved</p>
     </div>
     
     <nav class="footer-links">
-      <a class="nav-link" href="#about">About</a>
+      <a href="/pages/aboutpage.html" class="nav-link" href="#about">About</a>
       <a class="nav-link" href="/pages/servicepages.html">Services</a>
       <a class="nav-link" href="/pages/portfoliopage.html">Portfolio</a>
       <a class="nav-link" href="/pages/contactpage.html">Contact</a>

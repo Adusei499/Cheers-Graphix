@@ -269,7 +269,7 @@
         padding: 15px 20px;
         height: 80px;
       }
-
+      
       .brand-name {
         font-size: 1.8rem;
       }
@@ -315,6 +315,7 @@
     }
 
     @media (max-width: 480px) {
+      
       .about-info {
         padding: 30px 20px;
       }
@@ -341,4 +342,16 @@
         flex-direction: column;
         gap: 5px;
       }
+       .footer-content p {
+        font-size: 0.7rem;
+      }
+
+      .footer-links {
+        gap: 8px;
+      }
+
+      .footer-links a {
+        font-size: 0.7rem;
+      }
+
     }
