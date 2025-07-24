@@ -1,4 +1,4 @@
-.service-content, .portfolio-content, .contact-content {
+.service-content {
       background: rgba(255, 255, 255, 0.9);
       backdrop-filter: blur(20px);
       border-radius: 30px;
@@ -10,7 +10,7 @@
       text-align: center;
     }
 
-    .service-content h1, .portfolio-content h1, .contact-content h1 {
+    .service-content h1 {
       font-family: 'Poppins', sans-serif;
       font-size: 3.5rem;
       font-weight: 800;
