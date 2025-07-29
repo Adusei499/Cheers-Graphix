@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Creative Design Portfolio</title>
+ <style>
+ /* ===== RESET DEFAULT STYLES ===== */
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+ /* ===== BODY STYLING ===== */
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: #333;
+ background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+ min-height: 100vh;
+ }
+ /* ===== CONTAINER ===== */
+ .container {
+ max-width: 1400px;
+ margin: 0 auto;
+ padding: 20px;
+ }
+ /* ===== HEADER SECTION ===== */
+ .header {
+ text-align: center;
+ margin-bottom: 60px;
+ color: white;
+ }
+ .header h1 {
+ font-size: 3.5rem;
+ font-weight: 700;
+ margin-bottom: 20px;
+ }
+ .header p {
+ font-size: 1.2rem;
+ opacity: 0.9;
+ max-width: 600px;
+ margin: 0 auto;
+ }
+ /* ===== FILTER BUTTONS ===== */
+ .filter-container {
+ display: flex;
+ justify-content: center;
+ gap: 15px;
+ margin-bottom: 50px;
+ flex-wrap: wrap;
+ }
+ .filter-btn {
+ background: rgba(255,255,255,0.2);
+ color: white;
+ border: 2px solid rgba(255,255,255,0.3);
+ padding: 12px 24px;
+ border-radius: 30px;
+ cursor: pointer;
+ transition: 0.3s;
+ font-weight: 500;
+ }
+ .filter-btn.active {
+ background: white;
+ color: #667eea;
+ border-color: white;
+ }
+ /* ===== PORTFOLIO GRID ===== */
+ .portfolio-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+ gap: 30px;
+ }
+ /* ===== PORTFOLIO ITEMS ===== */
+ .portfolio-item {
+ background: rgba(255,255,255,0.95);
+ border-radius: 20px;
+ overflow: hidden;
+ box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+ cursor: pointer;
+ transition: 0.4s;
+ }
+ .portfolio-item:hover {
+ transform: translateY(-10px);
+ }
+ .item-image img {
+ width: 100%;
+ height: 320px;
+ object-fit: cover; /* Ensures image fits without distortion */
+ display: block;
+ }
+ /* ===== LIGHTBOX OVERLAY ===== */
+ .lightbox {
+ display: none;
+ position: fixed;
+ top: 0; left: 0;
+ width: 100%; height: 100%;
+ background: rgba(0,0,0,0.9);
+ z-index: 1000;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ }
+ /* ===== LIGHTBOX CONTENT ===== */
+ .lightbox-content {
+ position: relative;
+ background: white;
+ padding: 20px;
+ border-radius: 10px;
+ max-width: 90%;
+ width: 700px;
+ text-align: center;
+ }
+ .lightbox-content img {
+ width: 100%;
+ max-height: 70vh; /* Prevent overflow vertically */
+ object-fit: contain; /* Ensures full image is visible without cropping */
+ border-radius: 10px;
+ margin-bottom: 15px;
+ }
+ /* ===== LIGHTBOX CAPTIONS ===== */
+ .lightbox-title {
+ font-size: 1.5rem;
+ margin-bottom: 10px;
+ color: #333;
+ }
+ .lightbox-description {
+ font-size: 1rem;
+ margin-bottom: 10px;
+ color: #555;
+ }
+ .lightbox-tools {
+ margin-top: 10px;
+ }
+ .tool-tag {
+ display: inline-block;
+ background: #f0f0f0;
+ color: #667eea;
+ padding: 5px 10px;
+ border-radius: 15px;
+ margin: 3px;
+ font-size: 0.85rem;
+ }
+ /* ===== LIGHTBOX CONTROLS (CLOSE, NEXT, PREV) ===== */
+ .lightbox-close,
+ .lightbox-prev,
+ .lightbox-next {
+ position: absolute;
+ top: 50%;
+ transform: translateY(-50%);
+ background: rgba(255,255,255,0.8);
+ border: none;
+ padding: 10px 15px;
+ font-size: 2rem;
+ cursor: pointer;
+ border-radius: 50%;
+ color: #333;
+ }
+ .lightbox-close {
+ top: 15px;
+ right: 20px;
+ transform: none;
+ font-size: 2rem;
+ }
+ .lightbox-prev { left: -60px; }
+ .lightbox-next { right: -60px; }
+ </style>
+</head>
+<body>
+ <div class="container">
+ <!-- ===== HEADER SECTION ===== -->
+ <div class="header">
+ <h1>Creative Design Portfolio</h1>
+ <p>Showcasing innovative designs across print, digital, and branding with a passion for 
+visual storytelling</p>
+ </div>
+ <!-- ===== FILTER BUTTONS ===== -->
+ <div class="filter-container">
+ <button class="filter-btn active" data-filter="all">All Work</button>
+ <button class="filter-btn" data-filter="print">Print Design</button>
+ <button class="filter-btn" data-filter="logo">Logo & Branding</button>
+ <button class="filter-btn" data-filter="flyers">Flyers & Marketing</button>
+ </div>
+ <!-- ===== CATEGORY INTRO TEXT ===== -->
+ <div class="category-intro" id="category-intro">
+ <h2>All Creative Work</h2>
+ <p>Explore a comprehensive collection of design projects spanning various mediums and 
+industries.</p>
+ </div>
+ <!-- ===== PORTFOLIO GRID (ADD IMAGES HERE) ===== -->
+ <div class="portfolio-grid" id="portfolio-grid">
+ <!-- Example Item -->
+ <div class="portfolio-item" data-category="print" 
+ data-image="images/design1.jpg" 
+ data-title="Brochure Design"
+ data-description="A modern brochure layout for a corporate client."
+ data-tools="Photoshop, Illustrator">
+ <div class="item-image">
+ <img src="images/design1.jpg" alt="Brochure Design">
+ </div>
+ </div>
+ <div class="portfolio-item" data-category="logo"
+ data-image="images/logo1.jpg"
+ data-title="Brand Logo"
+ data-description="A sleek and minimalistic logo designed for a tech startup."
+ data-tools="Illustrator, Figma">
+ <div class="item-image">
+ <img src="images/logo1.jpg" alt="Logo Design">
+ </div>
+ </div>
+ <div class="portfolio-item" data-category="flyers"
+ data-image="images/flyer1.jpg"
+ data-title="Event Flyer"
+ data-description="A vibrant flyer created for a music festival promotion."
+ data-tools="Photoshop, Canva">
+ <div class="item-image">
+ <img src="images/flyer1.jpg" alt="Flyer Design">
+ </div>
+ </div>
+ </div>
+ </div>
+ <!-- ===== LIGHTBOX (POPUP VIEWER) ===== -->
+ <div class="lightbox" id="lightbox">
+ <div class="lightbox-content">
+ <button class="lightbox-close" id="lightbox-close">&times;</button>
+ <button class="lightbox-prev" id="lightbox-prev">&#10094;</button>
+ <button class="lightbox-next" id="lightbox-next">&#10095;</button>
+ <img id="lightbox-img" src="" alt="Expanded View">
+ <h3 class="lightbox-title" id="lightbox-title"></h3>
+ <p class="lightbox-description" id="lightbox-description"></p>
+ <div class="lightbox-tools" id="lightbox-tools"></div>
+ </div>
+ </div>
+ <script>
+ // ===== SELECTORS =====
+ const filterBtns = document.querySelectorAll('.filter-btn');
+ const portfolioItems = document.querySelectorAll('.portfolio-item');
+ const lightbox = document.getElementById('lightbox');
+ const lightboxImg = document.getElementById('lightbox-img');
+ const lightboxTitle = document.getElementById('lightbox-title');
+ const lightboxDescription = document.getElementById('lightbox-description');
+ const lightboxTools = document.getElementById('lightbox-tools');
+ const closeBtn = document.getElementById('lightbox-close');
+ const prevBtn = document.getElementById('lightbox-prev');
+ const nextBtn = document.getElementById('lightbox-next');
+ let currentIndex = 0;
+ // ===== FILTER FUNCTIONALITY =====
+ filterBtns.forEach(btn => {
+ btn.addEventListener('click', () => {
+ filterBtns.forEach(b => b.classList.remove('active'));
+ btn.classList.add('active');
+ const category = btn.dataset.filter;
+ portfolioItems.forEach((item, index) => {
+ item.style.display = (category === 'all' || item.dataset.category === category) ?
+'block' : 'none';
+ });
+ });
+ });
+ // ===== OPEN LIGHTBOX =====
+ portfolioItems.forEach((item, index) => {
+ item.addEventListener('click', () => {
+ currentIndex = index;
+ showLightbox();
+ });
+ });
+ // ===== SHOW LIGHTBOX FUNCTION =====
+ function showLightbox() {
+ const item = portfolioItems[currentIndex];
+ lightboxImg.src = item.dataset.image;
+ lightboxTitle.textContent = item.dataset.title;
+ lightboxDescription.textContent = item.dataset.description;
+ // Display tools as tags
+ lightboxTools.innerHTML = '';
+ item.dataset.tools.split(',').forEach(tool => {
+ lightboxTools.innerHTML += `<span class="tool-tag">${tool.trim()}</span>`;
+ });
+ lightbox.style.display = 'flex';
+ }
+ // ===== NEXT & PREVIOUS BUTTONS =====
+ nextBtn.addEventListener('click', () => {
+ currentIndex = (currentIndex + 1) % portfolioItems.length;
+ showLightbox();
+ });
+ prevBtn.addEventListener('click', () => {
+ currentIndex = (currentIndex - 1 + portfolioItems.length) % portfolioItems.length;
+ showLightbox();
+ });
+ // ===== CLOSE LIGHTBOX =====
+ closeBtn.addEventListener('click', () => lightbox.style.display = 'none');
+ lightbox.addEventListener('click', (e) => {
+ if (e.target === lightbox) lightbox.style.display = 'none';
+ });
+ // ===== CLOSE WITH ESCAPE KEY =====
+ document.addEventListener('keydown', (e) => {
+ if (e.key === 'Escape') lightbox.style.display = 'none';
+ });
+ </script>
+</body>
+</html>
