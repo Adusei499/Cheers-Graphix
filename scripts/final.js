@@ -3,7 +3,7 @@
     const dots = document.querySelectorAll('.dot');
     const totalSlides = slides.length;
 
-    function showSlide(index) {
+    function showSlide(index) { 
       // Remove active class from all slides and dots
       slides.forEach(slide => slide.classList.remove('active'));
       dots.forEach(dot => dot.classList.remove('active'));
@@ -49,7 +49,7 @@
     // Initialize auto-slide
     startAutoSlide();
 
-    function scrollToSection(sectionId, event) {
+function scrollToSection(sectionId, event) {
   event.preventDefault();
   const section = document.getElementById(sectionId);
   if (section) {
@@ -69,6 +69,38 @@ function scrollToTop() {
 }
 
 function toggleMenu() {
-    const nav = document.getElementById('nav-menu');
-    nav.classList.toggle('active');
+  const navMenu = document.getElementById('nav-menu');
+  const hamburger = document.getElementById('hamburger');
+  navMenu.classList.toggle('active');
+  hamburger.classList.toggle('active');
+
+   if (navMenu.classList.contains('active')) {
+    hamburger.innerHTML = '✕';
+  } else {
+    hamburger.innerHTML = '☰';
   }
+};
+
+document.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', () => {
+    document.getElementById('nav-menu').classList.remove('active');
+    document.getElementById('hamburger').classList.remove('active');
+
+     document.getElementById('hamburger').innerHTML = '☰';
+  });
+
+});
+window.addEventListener('click', (e) => {
+  const navMenu = document.getElementById('nav-menu');
+  const hamburger = document.getElementById('hamburger');
+
+  if (navMenu.classList.contains('active') &&
+    !navMenu.contains(e.target) &&
+    !hamburger.contains(e.target)
+    ) {navMenu.classList.remove('active');
+      hamburger.classList.remove('active');
+      hamburger.innerHTML = '☰'
+     };
+
+});
+

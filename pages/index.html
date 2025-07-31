@@ -16,15 +16,17 @@
 <body>
   <header class="header">
     <div class="brand-name" onclick = "scrollToTop()">Cheers Graphix</div>
-    <div class="hamburger" onclick="toggleMenu()">
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
       ☰
     </div>
+  
     <nav class="info-links" id="nav-menu">
-      <a href="#about" class="nav-link" onclick="scrollToSection('about', event)">ABOUT</a>
+      <a class="nav-link" href="#about" onclick="scrollToSection('about', event)">ABOUT</a>
       <a class="nav-link" href="#services" onclick="scrollToSection('services', event)">SERVICES</a>
-      <a class="nav-link" href="#portfolio">PORTFOLIO</a>
-      <a class="nav-link" onclick="scrollToSection('contact', event)" href="#contact">CONTACT</a>
+      <a class="nav-link" href="#portfolio" onclick="scrollToSection('portfolio', event)">PORTFOLIO</a>
+      <a class="nav-link" href="#contact" onclick="scrollToSection('contact', event)" >CONTACT</a>
     </nav>
+  
   </header>
 
   <main class="hero">
@@ -141,7 +143,7 @@
   </section>
 
 
-<section id="#portfolio">
+<section id="portfolio">
  <div class="portfolio-content">
     <div class="container">
       <h1>Our Creative Portfolio</h1>
@@ -341,7 +343,7 @@
  </div>
 </section>
 
-<section id="#contact">
+<section id="contact">
   <div class="contact-content">
       <h1>Get in Touch</h1>
       <p class="contact-message">Whether you're dreaming up a bold new brand, curious about our pricing, or ready to turn your vision into visuals - we're all ears and ready to create something together</p>
