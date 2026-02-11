@@ -16,10 +16,10 @@
             });
         });
         
-        // ============================================
-        // SMOOTH PAGE NAVIGATION
+        
+       
         // Show/hide sections based on navigation clicks
-        // ============================================
+        
         const navLinks = document.querySelectorAll('.nav-link');
         const sections = {
             home: document.getElementById('home'),
@@ -29,7 +29,7 @@
             contact: document.getElementById('contact')
         };
         
-        // Function to show specific section and hide others
+        //  show specific section and hide others
         function showSection(sectionName) {
             // Hide all sections
             Object.values(sections).forEach(section => {
@@ -77,10 +77,10 @@
             showSection(hash);
         });
         
-        // ============================================
+     
         // STICKY HEADER
         // Add/remove scrolled class for header styling
-        // ============================================
+       
         const header = document.querySelector('.header');
         
         window.addEventListener('scroll', () => {
@@ -91,10 +91,9 @@
             }
         });
         
-        // ============================================
         // SCROLL ANIMATIONS
         // Fade in elements as they enter viewport
-        // ============================================
+       
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -116,10 +115,8 @@
             observer.observe(el);
         });
         
-        // ============================================
-        // PORTFOLIO FILTER
         // Filter portfolio items by category
-        // ============================================
+        
         const filterButtons = document.querySelectorAll('.filter-btn');
         const portfolioCards = document.querySelectorAll('.portfolio-card');
         
@@ -151,15 +148,12 @@
             });
         });
         
-        // ============================================
         // CONTACT FORM HANDLING
-        // Form submission with validation
-        // ============================================
         const contactForm = document.getElementById('contactForm');
-        
+         
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            
+
             // Get form data
             const formData = {
                 name: document.getElementById('name').value,
@@ -167,22 +161,39 @@
                 service: document.getElementById('service').value,
                 message: document.getElementById('message').value
             };
-            
-            // In a real application, this would send data to a server
-            // For demonstration, we'll show a success message
-            alert(`Thank you, ${formData.name}! We've received your message and will get back to you soon.`);
-            
-            // Reset form
-            contactForm.reset();
-            
-            // Log to console for demonstration
+            const status = contactForm.querySelector('.form-submit');
+            status.innerHTML = "Sending....";
+
+            // Send form to formspree
+            fetch("https://formspree.io/f/mgolonbb", {
+                method: 'POST',
+                body: JSON.stringify(formData),
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                }
+            }).then (response => {
+                if(response.ok) {
+                    alert(`Thank you, ${formData.name}! We've received your message and will get back to you soon.`);
+                    contactForm.reset();
+                } else {
+                    alert("Oops, There was a problem sending your message");
+                }
+            }).catch(error => {
+                alert("Network errror. Please try again");
+            }).finally(() => {
+                status.innerHTML = "Send Message";
+            });
+
+            // log to console
             console.log('Form submitted:', formData);
         });
+
         
         // ============================================
         // PERFORMANCE OPTIMIZATION
         // Lazy load images and optimize animations
-        // ============================================
+       
         
         // Debounce function for scroll events
         function debounce(func, wait) {
@@ -204,10 +215,7 @@
         
         window.addEventListener('scroll', handleScroll);
         
-        // ============================================
         // ACCESSIBILITY ENHANCEMENTS
-        // Keyboard navigation and focus management
-        // ============================================
         
         // Add keyboard navigation for portfolio filters
         filterButtons.forEach((button, index) => {
@@ -268,10 +276,8 @@
         `;
         document.head.appendChild(style);
         
-        // ============================================
+    
         // CONSOLE MESSAGE
-        // Friendly message for developers
-        // ============================================
         console.log('%c🎨 Cheers Graphix', 'font-size: 24px; font-weight: bold; color: #FF6B6B;');
         console.log('%cLooking for a creative partner? Let\'s chat!', 'font-size: 14px; color: #6BFFFF;');
         console.log('%chello@cheersgraphix.com', 'font-size: 12px; color: #FFD93D;');
