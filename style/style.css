@@ -233,152 +233,122 @@
             transform: rotate(-45deg) translate(7px, -7px);
         }
         
-        /* ============================================
-           HERO SECTION - HOME PAGE
-           Eye-catching landing with animated elements
-           ============================================ */
+        /* HERO SECTION - HOME PAGE */
+         /* ============================================
+           HERO
+        ============================================ */
         .hero {
             min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: clip;
+            display: flex; align-items: center; justify-content: center;
+            position: relative; overflow: visible;
             padding: var(--space-lg) var(--space-md);
-            background: radial-gradient(ellipse at top, rgba(17, 90, 200, 0.2), transparent 50%),
-            radial-gradient(ellipse at bottom right, rgba(10, 52, 117, 0.15), transparent 50%);
+            background: radial-gradient(ellipse at top, rgba(17,90,200,0.2), transparent 50%),
+                        radial-gradient(ellipse at bottom right, rgba(10,52,117,0.15), transparent 50%),
+                        var(--dark-bg);
         }
-        
-        /* Animated background shapes for visual interest */
-        .hero::before,
-        .hero::after {
-            content: '';
-            position: absolute;
-            border-radius: 50%;
-            opacity: 0.3;
-            animation: float 20s ease-in-out infinite;
+        .hero::before, .hero::after {
+            content: ''; position: absolute; border-radius: 50%;
+            opacity: 0.25; animation: float 20s ease-in-out infinite;
         }
-        
         .hero::before {
-            width: 400px;
-            height: 400px;
+            width: 400px; height: 400px;
             background: radial-gradient(circle, var(--primary-blue), transparent);
-            top: -200px;
-            right: -100px;
-            animation-delay: -5s;
+            top: -200px; right: -100px; animation-delay: -5s;
         }
-        
         .hero::after {
-            width: 300px;
-            height: 300px;
+            width: 300px; height: 300px;
             background: radial-gradient(circle, var(--accent-light-blue), transparent);
-            bottom: -150px;
-            left: -100px;
+            bottom: -150px; left: -100px;
         }
-        
         @keyframes float {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            25% { transform: translate(30px, -30px) scale(1.1); }
-            50% { transform: translate(-20px, 20px) scale(0.9); }
-            75% { transform: translate(20px, 30px) scale(1.05); }
+            0%,100% { transform: translate(0,0) scale(1); }
+            25%  { transform: translate(30px,-30px) scale(1.1); }
+            50%  { transform: translate(-20px,20px) scale(0.9); }
+            75%  { transform: translate(20px,30px) scale(1.05); }
         }
-        
         .hero-content {
-            text-align: center;
-            max-width: 1100px;
-            width : 100%;
-            position: relative;
-            z-index: 1;
+            text-align: center; max-width: 1100px; width: 100%;
+            position: relative; z-index: 1;
             animation: fadeInUp 1s ease-out;
         }
-        
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(30px); }
+            to   { opacity: 1; transform: translateY(0); }
         }
-        
-        /* Eye-catching label above headline */
         .hero-label {
             display: inline-block;
-            background:  rgba(17, 90, 200, 0.15);
-            border: 1px solid var(--primary-blue);
-            color: var(--primary-blue);
-            padding: 0.5rem 1.5rem;
-            border-radius: 50px;
-            font-size: 0.875rem;
-            font-weight: 600;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            margin-bottom: var(--space-md);
+            background: rgba(17,90,200,0.15); border: 1px solid var(--primary-blue);
+            color: var(--accent-light-blue); padding: 0.5rem 1.5rem; border-radius: 50px;
+            font-size: 0.875rem; font-weight: 600; letter-spacing: 0.05em;
+            text-transform: uppercase; margin-bottom: var(--space-md);
             animation: fadeInUp 1s ease-out 0.2s both;
         }
-        
+
+        /* ── h1 gradient fix ── */
         .hero h1 {
-            background: linear-gradient(135deg, var(--white), var(--accent-light-blue));
+            animation: fadeInUp 1s ease-out 0.3s both;
+            display: block;
+            width: 100%;
+            line-height: 1.3;
+            padding-bottom: 0.25em;
+        }
+        /* Line 1 stays plain white */
+        .hero-line1 {
+            display: block;
+            color: var(--white);
+        }
+        /* Line 2 gets its own gradient span — fixes the "le" clip on all screens */
+        .hero-line2 {
+            display: inline-block;
+            background: linear-gradient(90deg, var(--white) 0%, var(--accent-light-blue) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            padding-bottom: 0.15em;
-            line-height: 1.25;
-            animation: fadeInUp 1s ease-out 0.3s both;
+            padding-bottom: 0.2em;
+            padding-right: 0.2em;
         }
-        
+
         .hero-subtitle {
             font-size: clamp(1.125rem, 2.5vw, 1.5rem);
-            color: var(--light-gray);
-            margin-bottom: var(--space-lg);
+            color: var(--light-gray); margin-bottom: var(--space-lg);
             animation: fadeInUp 1s ease-out 0.4s both;
         }
-        
-        /* Call-to-Action Buttons */
         .cta-buttons {
-            display: flex;
-            gap: var(--space-sm);
-            justify-content: center;
-            flex-wrap: wrap;
-            animation: fadeInUp 1s ease-out 0.5s both;
+            display: flex; gap: var(--space-sm); justify-content: center;
+            flex-wrap: wrap; animation: fadeInUp 1s ease-out 0.5s both;
         }
-        
         .btn {
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1.125rem;
-            text-decoration: none;
-            transition: all var(--transition-smooth);
-            cursor: pointer;
-            border: none;
-            font-family: var(--font-body);
+            padding: 1rem 2.5rem; border-radius: 50px; font-weight: 600;
+            font-size: 1.125rem; text-decoration: none;
+            transition: all var(--transition-smooth); cursor: pointer;
+            border: none; font-family: var(--font-body);
         }
-        
         .btn-primary {
             background: linear-gradient(135deg, var(--primary-blue), var(--primary-deep));
-            color: var(--white);
-            box-shadow: 0 4px 20px  rgba(17, 90, 200, 0.4);
+            color: var(--white); box-shadow: 0 4px 20px rgba(17,90,200,0.4);
         }
-        
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 30px  rgba(17, 90, 200, 0.6);
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 6px 30px rgba(17,90,200,0.6); }
+        .btn-secondary { background: transparent; color: var(--white); border: 2px solid var(--white); }
+        .btn-secondary:hover { background: var(--white); color: var(--dark-bg); transform: translateY(-3px); }
+
+        /* ============================================
+           SHARED UTILITIES
+        ============================================ */
+        .container { max-width: 1400px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: var(--space-lg); }
+        .section-label {
+            color: var(--primary-blue); font-weight: 600; text-transform: uppercase;
+            letter-spacing: 0.1em; font-size: 0.875rem; margin-bottom: var(--space-sm);
+            display: block;
         }
-        
-        .btn-secondary {
-            background: transparent;
-            color: var(--white);
-            border: 2px solid var(--white);
+        .text-gradient {
+            background: linear-gradient(135deg, var(--primary-blue), var(--accent-light-blue));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
         }
-        
-        .btn-secondary:hover {
-            background: var(--white);
-            color: var(--dark-bg);
-            transform: translateY(-3px);
-        }
+        .hidden { display: none !important; }
+        .fade-in { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
         
         /* ============================================
            SERVICES SECTION - HOME PAGE
@@ -558,6 +528,54 @@
             justify-content: center;
             font-size: 8rem;
         }
+
+        /*Testimonial*/
+        .testimonials-section { padding: var(--space-xl) var(--space-md); background: var(--dark-bg); }
+        .carousel-wrapper {
+            display: flex; align-items: center; gap: 1rem;
+            position: relative; margin-top: var(--space-lg);
+        }
+        .carousel-track-container { overflow: hidden; width: 100%; border-radius: 24px; }
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s cubic-bezier(0.4,0,0.2,1);
+            will-change: transform;
+        }
+        .testimonial-card {
+            min-width: 100%; background: var(--dark-card);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 24px; padding: var(--space-lg);
+            box-sizing: border-box; display: flex; flex-direction: column; gap: 1.5rem;
+        }
+        .testimonial-stars { color: #FFD93D; font-size: 1.3rem; letter-spacing: 3px; }
+        .testimonial-text {
+            font-size: clamp(1rem, 2vw, 1.15rem); color: var(--light-gray);
+            line-height: 1.9; max-width: 100%; font-style: italic;
+        }
+        .testimonial-author { display: flex; align-items: center; gap: 1rem; margin-top: auto; }
+        .testimonial-avatar {
+            width: 52px; height: 52px; border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-blue), var(--accent-light-blue));
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 700; font-size: 0.9rem; color: var(--white); flex-shrink: 0;
+        }
+        .testimonial-info { display: flex; flex-direction: column; gap: 0.25rem; }
+        .testimonial-info strong { color: var(--white); font-size: 1rem; }
+        .testimonial-info span  { color: var(--accent-light-blue); font-size: 0.875rem; }
+        .carousel-btn {
+            background: var(--dark-card); border: 1px solid rgba(255,255,255,0.1);
+            color: var(--white); width: 48px; height: 48px; border-radius: 50%;
+            font-size: 1.2rem; cursor: pointer; flex-shrink: 0;
+            transition: all var(--transition-smooth);
+            display: flex; align-items: center; justify-content: center;
+        }
+        .carousel-btn:hover { background: var(--primary-blue); border-color: var(--primary-blue); transform: scale(1.1); }
+        .carousel-dots { display: flex; justify-content: center; gap: 0.6rem; margin-top: 2rem; }
+        .carousel-dot {
+            width: 10px; height: 10px; border-radius: 50%; background: var(--mid-gray);
+            border: none; cursor: pointer; transition: all var(--transition-smooth); padding: 0;
+        }
+        .carousel-dot.active { background: var(--primary-blue); transform: scale(1.4); }
         
         /* Mission and values section */
         .mission-section {
@@ -1019,6 +1037,9 @@
             .btn {
                 width: 100%;
             }
+            .hero-content >*+* {
+                margin-top: 1.5rem;
+            }
         }
         
         @media (max-width: 640px) {
@@ -1053,5 +1074,23 @@
             animation: pageLoad 0.6s ease-out;
         }
 
+        @media (max-width: 640px) {
+            :root { --space-md: 1.5rem; --space-lg: 2rem; --space-xl: 3rem; }
+            .services-grid, .portfolio-grid, .portfolio-masonry { grid-template-columns: 1fr; }
 
+            /* Hero spacing on mobile */
+            .hero {
+                padding: 6rem 1.5rem 3rem;
+                align-items: flex-start;
+                justify-content: flex-start;
+            }
+            .hero-content { padding-top: 2rem; }
+            .hero h1 { margin-bottom: 1.5rem; }
+            .hero-subtitle { margin-bottom: 2rem; }
+            .cta-buttons { gap: 1rem; margin-top: 0.5rem; }
+            .btn { padding: 0.9rem 1.5rem; }
 
+            /* Carousel on mobile */
+            .testimonial-card { padding: var(--space-md); }
+            .carousel-btn { width: 38px; height: 38px; font-size: 1rem; }
+        }
