@@ -189,6 +189,54 @@
             console.log('Form submitted:', formData);
         });
 
+        // ── Testimonials Carousel ──
+             (function () {
+            const track    = document.getElementById('carouselTrack');
+            const dotsWrap = document.getElementById('carouselDots');
+            const prevBtn  = document.querySelector('.carousel-prev');
+            const nextBtn  = document.querySelector('.carousel-next');
+            const cards    = document.querySelectorAll('.testimonial-card');
+            let current = 0, timer = null;
+            const total = cards.length;
+
+            // Build dots
+            cards.forEach((_, i) => {
+                const dot = document.createElement('button');
+                dot.classList.add('carousel-dot');
+                dot.setAttribute('aria-label', `Go to testimonial ${i + 1}`);
+                if (i === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => goTo(i));
+                dotsWrap.appendChild(dot);
+            });
+
+            function goTo(i) {
+                current = (i + total) % total;
+                track.style.transform = `translateX(-${current * 100}%)`;
+                document.querySelectorAll('.carousel-dot').forEach((d, j) => d.classList.toggle('active', j === current));
+                resetTimer();
+            }
+
+            function startTimer() { timer = setInterval(() => goTo(current + 1), 5000); }
+            function resetTimer() { clearInterval(timer); startTimer(); }
+
+            prevBtn.addEventListener('click', () => goTo(current - 1));
+            nextBtn.addEventListener('click', () => goTo(current + 1));
+
+            // Swipe support
+            let startX = 0;
+            track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+            track.addEventListener('touchend',   e => { const d = startX - e.changedTouches[0].clientX; if (Math.abs(d) > 50) d > 0 ? goTo(current + 1) : goTo(current - 1); }, { passive: true });
+
+            // Pause on hover
+            track.addEventListener('mouseenter', () => clearInterval(timer));
+            track.addEventListener('mouseleave', startTimer);
+
+            startTimer();
+        })();
+
+
+
+
         
         // ============================================
         // PERFORMANCE OPTIMIZATION
