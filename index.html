@@ -21,7 +21,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="/style/style.css">
     
 </head>
 <body>
@@ -34,7 +34,7 @@
         <nav class="nav-container">
             <!-- Logo -->
             <a href="#home" class="logo">
-                <img src="CHEERS GRAP-1/PNG/Cheers Graphics Logo Horizontal Black.png" alt="Cheers Graphix Logo"></a>
+                <img src="/CHEERS GRAP-1/PNG/Cheers Graphics Logo Horizontal Black.png" alt="Cheers Graphix Logo"></a>
             
             <!-- Desktop & Mobile Menu -->
             <ul class="nav-menu" id="navMenu">
@@ -57,119 +57,63 @@
     
     <!-- Landing page with hero and previews -->
     <main id="home">
-        <!-- Hero Section -->
         <section class="hero">
             <div class="hero-content">
-                
-                <h1>Bold Ideas.<br>Unforgettable Brands.</h1>
+                <span class="hero-label">Creative Design Studio</span>
+                <h1>
+                    <span class="hero-line1">Bold Ideas.</span>
+                    <span class="hero-line2">Iconic Brands.</span>
+                </h1>
                 <p class="hero-subtitle">We transform businesses into visual powerhouses with design that captivates, converts, and leaves a lasting impression.</p>
                 <div class="cta-buttons">
-                    <a href="#contact" class="btn btn-primary">Start Your Project</a>
+                    <a href="#contact"   class="btn btn-primary">Start Your Project</a>
                     <a href="#portfolio" class="btn btn-secondary">View Our Work</a>
                 </div>
             </div>
         </section>
-        
-        <!-- Services Preview Section -->
+
+        <!-- Services Preview -->
         <section class="services-preview">
             <div class="container">
                 <div class="section-header fade-in">
-                    <p class="section-label">What We Do</p>
+                    <span class="section-label">What We Do</span>
                     <h2>Services That Make You <span class="text-gradient">Stand Out</span></h2>
-                    <p style="margin: 0 auto;">From concept to execution, we bring your vision to life with creative excellence.</p>
+                    <p style="margin:0 auto;">From concept to execution, we bring your vision to life.</p>
                 </div>
-                
                 <div class="services-grid">
-                    <!-- Service Card 1 -->
-                    <div class="service-card fade-in">
-                        <span class="service-icon">🎨</span>
-                        <h3>Branding</h3>
-                        <p>Build a powerful brand identity that resonates with your audience and sets you apart from competitors.</p>
-                    </div>
-                    
-                    <!-- Service Card 2 -->
-                    <div class="service-card fade-in">
-                        <span class="service-icon">✨</span>
-                        <h3>Logo Design</h3>
-                        <p>Create memorable logos that capture your brand essence and leave a lasting impression.</p>
-                    </div>
-                    
-                    <!-- Service Card 3 -->
-                    <div class="service-card fade-in">
-                        <span class="service-icon">📱</span>
-                        <h3>Social Media Graphics</h3>
-                        <p>Engaging visuals that stop the scroll and turn followers into customers.</p>
-                    </div>
-                    
-                    <!-- Service Card 4 -->
-                    <div class="service-card fade-in">
-                        <span class="service-icon">💻</span>
-                        <h3>Web Design</h3>
-                        <p>Beautiful, user-friendly websites that convert visitors into loyal customers.</p>
-                    </div>
-                    
-                    <!-- Service Card 5 -->
-                    <div class="service-card fade-in">
-                        <span class="service-icon">📄</span>
-                        <h3>Print Design</h3>
-                        <p>Professional print materials that make your brand tangible and memorable.</p>
-                    </div>
-                    
-                    <!-- Service Card 6 -->
-                    <div class="service-card fade-in">
-                        <span class="service-icon">🚀</span>
-                        <h3>Creative Strategy</h3>
-                        <p>Strategic creative direction that aligns your visuals with your business goals.</p>
-                    </div>
+                    <div class="service-card fade-in"><span class="service-icon">🎨</span><h3>Branding</h3><p>Build a powerful brand identity that resonates with your audience.</p></div>
+                    <div class="service-card fade-in"><span class="service-icon">✨</span><h3>Logo Design</h3><p>Create memorable logos that capture your brand essence.</p></div>
+                    <div class="service-card fade-in"><span class="service-icon">📱</span><h3>Social Media</h3><p>Engaging visuals that stop the scroll and turn followers into customers.</p></div>
+                    <div class="service-card fade-in"><span class="service-icon">💻</span><h3>Web Design</h3><p>Beautiful, user-friendly websites that convert visitors.</p></div>
+                    <div class="service-card fade-in"><span class="service-icon">📄</span><h3>Print Design</h3><p>Professional print materials that make your brand tangible.</p></div>
+                    <div class="service-card fade-in"><span class="service-icon">🚀</span><h3>Creative Strategy</h3><p>Strategic creative direction aligned with your business goals.</p></div>
                 </div>
             </div>
         </section>
-        
-        <!-- Portfolio Preview Section -->
+
+        <!-- Portfolio Preview -->
         <section class="portfolio-preview">
             <div class="container">
                 <div class="section-header fade-in">
-                    <p class="section-label">Our Work</p>
+                    <span class="section-label">Our Work</span>
                     <h2>Recent <span class="text-gradient">Projects</span></h2>
-                    <p style="margin: 0 auto;">A glimpse of the brands we've helped transform.</p>
+                    <p style="margin:0 auto;">A glimpse of the brands we've helped transform.</p>
                 </div>
-                
                 <div class="portfolio-grid">
-                    <!-- Portfolio Item 1 -->
                     <div class="portfolio-item fade-in">
-                        <div class="portfolio-image" style="background-image:url(/images/IMG_8427.jpg);
-                        background-position: center;
-                        background-size: cover;"></div>
-                        <div class="portfolio-overlay">
-                            <p class="portfolio-category">Branding</p>
-                            <h3 class="portfolio-title">God's Character</h3>
-                        </div>
+                        <div class="portfolio-image" style="background:linear-gradient(135deg,#115ac8,#0a3475);height:100%;"></div>
+                        <div class="portfolio-overlay"><p class="portfolio-category">Branding</p><h3 class="portfolio-title">TechFlow Startup</h3></div>
                     </div>
-                    
-                    <!-- Portfolio Item 2 -->
                     <div class="portfolio-item fade-in">
-                        <div class="portfolio-image" style="background-image: url(images/IMG_1606.png);
-                         background-size: cover;
-                         background-position: center;"></div>
-                        <div class="portfolio-overlay">
-                            <p class="portfolio-category">Logo Design</p>
-                            <h3 class="portfolio-title">Compliance 360</h3>
-                        </div>
+                        <div class="portfolio-image" style="background:linear-gradient(135deg,#3d8ef7,#115ac8);height:100%;"></div>
+                        <div class="portfolio-overlay"><p class="portfolio-category">Logo Design</p><h3 class="portfolio-title">Bloom Cafe</h3></div>
                     </div>
-                    
-                    <!-- Portfolio Item 3 -->
                     <div class="portfolio-item fade-in">
-                        <div class="portfolio-image" style="background-image: url('images/IMG_1768.jpg');
-                        background-size: cover;
-                        background-position: center; "></div>
-                        <div class="portfolio-overlay">
-                            <p class="portfolio-category">Print Design</p>
-                            <h3 class="portfolio-title">Elkad Lodge</h3>
-                        </div>
+                        <div class="portfolio-image" style="background:linear-gradient(135deg,#4dd0e1,#3d8ef7);height:100%;"></div>
+                        <div class="portfolio-overlay"><p class="portfolio-category">Web Design</p><h3 class="portfolio-title">Zenith Fitness</h3></div>
                     </div>
                 </div>
-                
-                <div style="text-align: center; margin-top: var(--space-lg);">
+                <div style="text-align:center;margin-top:var(--space-lg);">
                     <a href="#portfolio" class="btn btn-primary">View All Projects</a>
                 </div>
             </div>
@@ -229,6 +173,89 @@
                         <p>We measure success by your success. Our designs are crafted to convert, engage, and grow your brand.</p>
                     </div>
                 </div>
+            </div>
+        </div>
+          <!--TESTIMONIALS CAROUSEL -->
+        <div class="testimonials-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label">Client Love</span>
+                    <h2>What Our <span class="text-gradient">Clients Say</span></h2>
+                </div>
+
+                <div class="carousel-wrapper">
+                    <button class="carousel-btn carousel-prev" aria-label="Previous">&#8592;</button>
+
+                    <div class="carousel-track-container">
+                        <div class="carousel-track" id="carouselTrack">
+
+                            <div class="testimonial-card">
+                                <div class="testimonial-stars">★★★★★</div>
+                                <p class="testimonial-text">"Cheers Graphix completely transformed our brand. We went from looking like a bedroom startup to a serious company overnight. The logo alone tripled our client enquiries."</p>
+                                <div class="testimonial-author">
+                                    <div class="testimonial-avatar">JM</div>
+                                    <div class="testimonial-info">
+                                        <strong>James Mitchell</strong>
+                                        <span>CEO, TechFlow</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="testimonial-card">
+                                <div class="testimonial-stars">★★★★★</div>
+                                <p class="testimonial-text">"The social media graphics they created stopped the scroll instantly. Our engagement went up 300% in the first month. Absolute professionals who deliver."</p>
+                                <div class="testimonial-author">
+                                    <div class="testimonial-avatar">SR</div>
+                                    <div class="testimonial-info">
+                                        <strong>Sofia Reyes</strong>
+                                        <span>Founder, Urban Threads</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="testimonial-card">
+                                <div class="testimonial-stars">★★★★★</div>
+                                <p class="testimonial-text">"Working with Cheers Graphix felt like having a creative director on our team. They understood our vision immediately and delivered beyond what we imagined."</p>
+                                <div class="testimonial-author">
+                                    <div class="testimonial-avatar">AK</div>
+                                    <div class="testimonial-info">
+                                        <strong>Ama Kofi</strong>
+                                        <span>Marketing Director, Nexus Consulting</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="testimonial-card">
+                                <div class="testimonial-stars">★★★★★</div>
+                                <p class="testimonial-text">"Fast, professional, incredibly talented. Our new website brought in more leads in 2 weeks than the old one did in 6 months. Worth every single penny."</p>
+                                <div class="testimonial-author">
+                                    <div class="testimonial-avatar">DL</div>
+                                    <div class="testimonial-info">
+                                        <strong>Daniel Lee</strong>
+                                        <span>Owner, Zenith Fitness</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="testimonial-card">
+                                <div class="testimonial-stars">★★★★★</div>
+                                <p class="testimonial-text">"I gave them a rough idea and they came back with something that made me emotional. They don't just design — they tell your story visually. Highly recommend."</p>
+                                <div class="testimonial-author">
+                                    <div class="testimonial-avatar">PO</div>
+                                    <div class="testimonial-info">
+                                        <strong>Priya Osei</strong>
+                                        <span>Founder, Bloom Cafe</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <button class="carousel-btn carousel-next" aria-label="Next">&#8594;</button>
+                </div>
+
+                <div class="carousel-dots" id="carouselDots"></div>
             </div>
         </div>
     </section>
@@ -522,7 +549,7 @@
                             <span class="contact-icon">📧</span>
                             <div>
                                 <strong>Email</strong><br>
-                                <a href="mailto:cheersgraphix@gmail.com" style="color: var(--primary-coral); text-decoration: none;">cheersgraphix@gmail.com</a>
+                                <a href="mailto:hello@cheersgraphix.com" style="color: var(--primary-coral); text-decoration: none;">cheersgraphix@gmail.com</a>
                             </div>
                         </div>
                         
@@ -530,7 +557,7 @@
                             <span class="contact-icon">📱</span>
                             <div>
                                 <strong>Phone</strong><br>
-                                <a href="tel:+233247030334" style="color: var(--light-gray); text-decoration: none;">+233 24-703-0334</a>
+                                <a href="tel:+1234567890" style="color: var(--light-gray); text-decoration: none;">+233 24-703-0334</a>
                             </div>
                         </div>
                         
@@ -545,14 +572,15 @@
                     
                     <h4 style="font-family: var(--font-heading); margin-top: var(--space-lg); margin-bottom: var(--space-sm);">Follow Us</h4>
                     <div class="social-links">
-                        <a href="https://www.instagram.com/cheers_graphix?igsh=MTl3amk2enQ0bXp6NQ==" class="social-link" aria-label="Instagram"><img src="images/IMG_1413.JPG"></a>
-                        <a href="https://x.com/cheers_graphix?s=21" class="social-link" aria-label="Dribbble"><img src="images/IMG_1411.PNG"></a>
+                        <a href="https://www.instagram.com/cheers_graphix?igsh=MTl3amk2enQ0bXp6NQ==" class="social-link" aria-label="Instagram"><img src="/images/IMG_1413.JPG"></a>
+                        <a href="https://x.com/cheers_graphix?s=21" class="social-link" aria-label="Dribbble"><img src="/images/IMG_1411.PNG"></a>
                     </div>
                 </div>
                 
                 <!-- Contact Form -->
                 <div class="contact-form">
                     <form id="contactForm" action="https:formspree.io/f/mgolonbb" method="POST" target="_blank">
+
                         <div class="form-group">
                             <label for="name" class="form-label">Your Name</label>
                             <input type="text" id="name" name="name" class="form-input" placeholder="John Doe" required>
@@ -581,6 +609,7 @@
                         </div>
                         
                         <button type="submit" class="btn btn-primary form-submit">Send Message</button>
+                    
                     </form>
                 </div>
             </div>
@@ -629,8 +658,8 @@
                 <p>cheersgraphix@gmail.com</p>
                 <p>+233 24-703-0334</p>
                 <div class="social-links" style="margin-top: var(--space-sm);">
-                    <a href="https://x.com/cheers_graphix?s=21" class="social-link" aria-label="Dribbble"><img src="images/IMG_1411.PNG"></a>
-                    <a href="https://www.instagram.com/cheers_graphix?igsh=MTl3amk2enQ0bXp6NQ==" class="social-link" aria-label="Behance"><img src="images/IMG_1413.JPG"></a>
+                    <a href="https://x.com/cheers_graphix?s=21" class="social-link" aria-label="Dribbble"><img src="/images/IMG_1411.PNG"></a>
+                    <a href="https://www.instagram.com/cheers_graphix?igsh=MTl3amk2enQ0bXp6NQ==" class="social-link" aria-label="Behance"><img src="/images/IMG_1413.JPG"></a>
                 </div>
             </div>
         </div>
@@ -640,6 +669,6 @@
         </div>
     </footer>
     
-    <script src="script/script.js"></script>
+    <script src="/script/script.js"></script>
 </body>
 </html>
