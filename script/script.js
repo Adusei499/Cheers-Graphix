@@ -66,49 +66,40 @@
   });
 
 
-  /*  NAV SHADOW ON SCROLL
-     Adds a shadow to the navbar when user
-     scrolls down past 60px */
+  //single scroll handler
   const mainNavbar = document.getElementById('mainNav');
-
-  window.addEventListener('scroll', function() {
-    const userHasScrolled = window.scrollY > 60;
-    mainNavbar.classList.toggle('scrolled', userHasScrolled);
-  }, { passive: true });
-
-
-  /* SCROLL PROGRESS BAR
-     Fills the thin bar at the top as the
-     user scrolls down the page */
   const progressBar = document.getElementById('scrollProgressBar');
-
-  window.addEventListener('scroll', function() {
-    const totalScrollableHeight = document.body.scrollHeight - window.innerHeight;
-    const howFarUserHasScrolled = window.scrollY;
-    const percentageScrolled = (howFarUserHasScrolled / totalScrollableHeight) * 100;
-    progressBar.style.width = percentageScrolled + '%';
-  }, { passive: true });
-
-
-  /* BACK TO TOP BUTTON
-     Shows/hides the ↑ button based on
-     how far the user has scrolled*/
   const backToTopButton = document.getElementById('backToTopBtn');
-
+  let scrollScheduled = false;
   window.addEventListener('scroll', function() {
-    const userScrolledFarEnough = window.scrollY > 500;
-    backToTopButton.classList.toggle('visible', userScrolledFarEnough);
-  }, { passive: true });
+    if (scrollScheduled) return;
+    scrollScheduled = true;
+
+    requestAnimationFrame(function() {
+      const currentScrollPosition = window.scrollY;
+      const totalScrollableHeight = document.body.scrollHeight - window.innerHeight;
+      //update progressbar
+      const scrollPercentage = (currentScrollPosition / totalScrollableHeight);
+      progressBar.style.width = scrollPercentage + '%';
+      //add shadow to navbar after scrolling 60px
+      mainNavbar.classList.toggle('scrolled', currentScrollPosition > 60);
+      //show backtoTop after scrolling
+      backToTopButton.classList.toggle('visible', currentScrollPosition > 500);
+
+      scrollScheduled = false;
+    });
+  }, {passive : true});
+ 
+
+ 
 
   backToTopButton.addEventListener('click', function() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
 
-  /* ==========================================
-     HAMBURGER MENU (MOBILE)
-     Opens and closes the mobile nav menu
-     ========================================== */
+  /* HAMBURGER MENU (MOBILE)
+     Opens and closes the mobile nav menu */
   const hamburgerButton  = document.getElementById('hamburgerBtn');
   const mobileNavMenu    = document.getElementById('mobileNavMenu');
 
@@ -118,29 +109,41 @@
   });
 
 
-  /* ==========================================
-     DARK / LIGHT THEME TOGGLE
+  /* DARK / LIGHT THEME TOGGLE
      Saves the user's preference to localStorage
-     so it persists when they revisit the page
-     ========================================== */
+     so it persists when they revisit the page */
   const htmlElement      = document.documentElement;
   const themeToggleThumb = document.getElementById('themeToggleThumb');
-  const savedTheme       = localStorage.getItem('cg-theme');
+  const devicePrefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+
+  function applyTheme(theme) {
+    htmlElement.setAttribute('data-theme', theme);
+    themeToggleThumb.textContent = theme === 'dark' ? '🌙' : '☀️';
+  };
+
+  const savedTheme = localStorage.getItem('cg-theme');
 
   // Apply saved theme on page load
-  if (savedTheme === 'light') {
-    htmlElement.setAttribute('data-theme', 'light');
-    themeToggleThumb.textContent = '☀️';
-  }
+  if (savedTheme ) {
+    applyTheme(savedTheme);
+  } else if(devicePrefersDark.matches) {
+    applyTheme('dark');
+  } else{
+    applyTheme('light')
+  };
+
+  devicePrefersDark.addEventListener('change', function(event) {
+    const userHasSavedPreference = localStorage.getItem('cg-theme');
+    if(!userHasSavedPreference) {
+      applyTheme(event.matches ? 'dark' : 'light');
+    }
+  });
 
   document.getElementById('themeToggleBtn').addEventListener('click', function() {
     const currentTheme  = htmlElement.getAttribute('data-theme');
-    const isCurrentlyLight = currentTheme === 'light';
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
 
-    // Switch to the opposite theme
-    const newTheme = isCurrentlyLight ? 'dark' : 'light';
-    htmlElement.setAttribute('data-theme', newTheme);
-    themeToggleThumb.textContent = isCurrentlyLight ? '🌙' : '☀️';
+    applyTheme(newTheme);
     localStorage.setItem('cg-theme', newTheme);
   });
 
@@ -392,6 +395,43 @@
     });
   });
 
+   function validateField(inputElement, errorElementId, validationFn) {
+    const errorElement = document.getElementById(errorElementId);
+    const isValid = validationFn(inputElement.value);
+
+    inputElement.classList.toggle('valid', isValid);
+    inputElement.classList.toggle('invalid', !isValid);
+    inputElement.classList.toggle('show', !isValid);
+
+    return isValid;
+  };
+
+  document.addEventListener('blur', function() {
+    validateField(this, 'nameError', function(value) {
+      return value.trim().length > 1;
+    });
+  });
+
+  document.getElementById('nameInput').addEventListener('blur', function() {
+    validateField(this, 'nameError', function(value) {
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailPattern.test(value);
+    });
+  });
+
+  document.getElementById('serviceSelect').addEventListener('blur', function() {
+    validateField(this, 'serviceError', function(value) {
+      return value !== '';
+    });
+  });
+
+  document.getElementById('messageTextarea').addEventListener('blur', function() {
+    validateField(this, 'messageError', function(value) {
+      return value.trim().length > 10;
+    });
+  });
+
+
 
   /* CONTACT FORM SUBMISSION
      Sends form data to Formspree and shows
@@ -406,6 +446,24 @@
     const emailValue   = document.getElementById('emailInput').value;
     const serviceValue = document.getElementById('serviceSelect').value;
     const messageValue = document.getElementById('messageTextarea').value;
+
+    const nameIsValid = validateField(document.getElementById('nameInput'), 'nameError', function(value) {
+      return value.trim().length > 1;
+    });
+    const emailIsValid = validateField(document.getElementById('emailInput'), 'emailError', function(value) {
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailPattern.test(value);
+    });
+    const serviceIsValid = validateField(document.getElementById('serviceSelect'), 'serviceError', function(value) {
+      return value !== '';
+    });
+    const messageIsValid = validateField(document.getElementById('messageTextarea'), 'messageError', function(value) {
+      return value.trim().length > 10;
+    });
+
+    if(!nameIsValid || !emailIsValid || !serviceIsValid || !messageIsValid){
+      return;
+    }
 
     // Show loading state
     submitButton.textContent = 'Sending...';
@@ -424,6 +482,12 @@
         submitButton.style.background = 'linear-gradient(135deg,#27ae60,#1a7a45)';
         contactForm.reset();
 
+        //clear all validation styles after reset
+        ['nameInput', 'emailInput', 'serviceSelect', 'messageTextarea'].forEach(function(id) {
+          const field = document.getElementById(id);
+          field.classList.remove('valid', 'invalid');
+        });
+
         // Reset button after 4 seconds
         setTimeout(function() {
           submitButton.textContent   = 'Send Message →';
@@ -439,7 +503,10 @@
       submitButton.textContent = 'Try Again';
       submitButton.disabled    = false;
     }
+
   });
+
+  
 
 
   /* LIGHTBOX
@@ -502,6 +569,10 @@
   function dismissCookieBanner() {
     cookieBanner.classList.remove('show');
     localStorage.setItem('cg-cookie-choice', 'answered');
+    setTimeout(function() {
+      cookieBanner.style.display = 'none'
+      
+    }, 600);
   }
 
   document.getElementById('cookieAcceptBtn').addEventListener('click',  dismissCookieBanner);

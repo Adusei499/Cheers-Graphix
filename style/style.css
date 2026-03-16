@@ -1,6 +1,4 @@
-/* ==============================
-   COLOUR TOKENS
-   ============================== */
+/* COLOUR TOKENS*/
 :root {
   --blue: #115ac8;
   --deep: #0a3475;
@@ -32,9 +30,7 @@
   --inp:  #eaeffc;
 }
 
-/* ==============================
-   RESET & BASE
-   ============================== */
+/* RESET & BASE */
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 html { scroll-behavior:smooth; overflow-x:hidden; }
 body {
@@ -113,9 +109,7 @@ button { cursor:pointer; font-family:inherit; border:none; outline:none; }
 @keyframes splashFadeIn { from { opacity:0; } to { opacity:1; } }
 @keyframes splashBarGrow{ from { width:0%; } to { width:100%; } }
 
-/* ==============================
-   SCROLL PROGRESS BAR
-   ============================== */
+/* SCROLL PROGRESS BAR*/
 #scrollProgressBar {
   position: fixed;
   top: 0; left: 0;
@@ -127,9 +121,7 @@ button { cursor:pointer; font-family:inherit; border:none; outline:none; }
   transition: width .1s linear;
 }
 
-/* ==============================
-   KENTE TOP BAR
-   ============================== */
+/* KENTE TOP BAR*/
 .kente-top {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -145,9 +137,7 @@ button { cursor:pointer; font-family:inherit; border:none; outline:none; }
   );
 }
 
-/* ==============================
-   NAVIGATION
-   ============================== */
+/* NAVIGATION */
 .nav {
   position: fixed;
   top: 4px; left: 0; right: 0;
@@ -257,15 +247,13 @@ button { cursor:pointer; font-family:inherit; border:none; outline:none; }
 .mobile-nav a:last-child { border: none; }
 .mobile-nav a:hover { color: var(--text); }
 
-/* ==============================
-   HERO
-   ============================== */
+/* HERO */
 .hero {
   min-height: 100vh;
   display: flex; flex-direction: column;
   justify-content: center; align-items: center;
   text-align: center;
-  padding: 5rem 2rem 0;          /* reduced top padding — badge removed */
+  padding: 5rem 2rem 0;          
   position: relative;
   overflow: visible;
   background: var(--bg);
@@ -362,9 +350,7 @@ button { cursor:pointer; font-family:inherit; border:none; outline:none; }
 .btn-ghost:hover { border-color: var(--blue); color: var(--blue); background: rgba(17,90,200,.06); transform: translateY(-2px); }
 @keyframes fadeUp { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:none; } }
 
-/* ==============================
-   MARQUEE / BRAND TICKER
-   ============================== */
+/* MARQUEE / BRAND TICKER */
 .marquee-section {
   position: relative; z-index: 1;
   width: 100%;
@@ -402,16 +388,12 @@ button { cursor:pointer; font-family:inherit; border:none; outline:none; }
 .brand-pill:hover { border-color: var(--blue); color: var(--text); }
 .brand-dot { width:6px; height:6px; border-radius:50%; background:var(--gold); flex-shrink:0; }
 
-/* ==============================
-   FEATURE 7 — WAVE DIVIDERS
-   ============================== */
+/* FEATURE 7 — WAVE DIVIDERS */
 .wave-divider { position:relative; height:80px; overflow:hidden; line-height:0; }
 .wave-divider svg { display:block; width:100%; height:100%; }
 .wave-divider.flipped { transform: scaleX(-1); }
 
-/* ==============================
-   SHARED SECTION STYLES
-   ============================== */
+/* SHARED SECTION STYLES */
 section { padding: 6rem 2rem; }
 .section-inner { max-width: 1200px; margin: 0 auto; }
 .label-pill {
@@ -453,9 +435,7 @@ section { padding: 6rem 2rem; }
 .delay-3 { transition-delay: .3s; }
 .delay-4 { transition-delay: .4s; }
 
-/* ==============================
-   ABOUT SECTION
-   ============================== */
+/* ABOUT SECTION */
 .about { background: var(--bg2); }
 .about-grid { display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:center; }
 .stats-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.25rem; margin-top:2.5rem; }
@@ -501,9 +481,7 @@ section { padding: 6rem 2rem; }
 .about-badge-text strong { display:block; font-size:.95rem; color:#fff; }
 .about-badge-text span   { font-size:.75rem; color:var(--text3); }
 
-/* ==============================
-   SERVICES SECTION
-   ============================== */
+/* SERVICES SECTION*/
 .services { background: var(--bg); }
 .services-header { text-align:center; margin-bottom:4rem; }
 .services-header .section-sub,
@@ -538,9 +516,7 @@ section { padding: 6rem 2rem; }
 .service-arrow { margin-top:1.5rem; font-size:1.2rem; color:var(--blue); transition:transform .3s; display:inline-block; }
 .service-card:hover .service-arrow { transform: translateX(6px); }
 
-/* ==============================
-   FEATURE 1 — PROCESS SECTION
-   ============================== */
+/*  PROCESS SECTION */
 .process { background: var(--bg2); }
 .process-header { text-align:center; margin-bottom:5rem; }
 .process-header .section-sub,
@@ -606,9 +582,7 @@ section { padding: 6rem 2rem; }
   letter-spacing: .08em; text-transform: uppercase;
 }
 
-/* ==============================
-   PORTFOLIO SECTION
-   ============================== */
+/* PORTFOLIO SECTION*/
 .portfolio { background: var(--bg); }
 .portfolio-header { display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:3rem; flex-wrap:wrap; gap:1.5rem; }
 .filter-row { display:flex; gap:.6rem; flex-wrap:wrap; }
@@ -624,7 +598,7 @@ section { padding: 6rem 2rem; }
 .filter-btn.active { background: var(--blue); color:#fff; border-color:var(--blue); }
 .masonry-grid { columns:3; column-gap:1.2rem; }
 
-/* FEATURE 8 — 3D TILT CARDS */
+/*3D TILT CARDS */
 .portfolio-card {
   break-inside: avoid;
   margin-bottom: 1.2rem;
@@ -654,9 +628,7 @@ section { padding: 6rem 2rem; }
 .portfolio-category { font-size:.7rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--cyan); margin-bottom:.3rem; }
 .portfolio-title    { font-size:1.05rem; font-weight:700; color:#fff; }
 
-/* ==============================
-   TESTIMONIALS
-   ============================== */
+/* TESTIMONIALS */
 .testimonials { background: var(--bg2); }
 .testimonials-header { text-align:center; margin-bottom:4rem; }
 .testimonials-header .section-sub,
@@ -711,9 +683,7 @@ section { padding: 6rem 2rem; }
 }
 .carousel-dot.active { background:var(--blue); width:24px; border-radius:4px; }
 
-/* ==============================
-   FAQ
-   ============================== */
+/* FAQ */
 .faq { background: var(--bg2); }
 .faq-layout { display:grid; grid-template-columns:1fr 1.6fr; gap:5rem; align-items:start; }
 .faq-item { border-bottom: 1px solid var(--border); }
@@ -741,9 +711,7 @@ section { padding: 6rem 2rem; }
 }
 .faq-item.open .faq-answer { max-height:300px; padding-bottom:1.5rem; }
 
-/* ==============================
-   CTA SECTION
-   ============================== */
+/* CTA SECTION */
 .cta-section { background: var(--bg); padding: 8rem 2rem; }
 .cta-inner   { max-width:860px; margin:0 auto; text-align:center; position:relative; }
 .cta-ghost-text {
@@ -756,9 +724,7 @@ section { padding: 6rem 2rem; }
 }
 .cta-inner > *:not(.cta-ghost-text) { position:relative; z-index:1; }
 
-/* ==============================
-   CONTACT SECTION
-   ============================== */
+/* CONTACT SECTION */
 .contact { background: var(--bg2); }
 .contact-grid { display:grid; grid-template-columns:1fr 1.5fr; gap:5rem; align-items:start; }
 .contact-detail { display:flex; align-items:center; gap:1rem; color:var(--text2); font-size:.93rem; }
@@ -817,10 +783,22 @@ section { padding: 6rem 2rem; }
   transition: all .3s; margin-top: .5rem;
 }
 .form-submit-btn:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(17,90,200,.5); }
+.form-input.invalid,
+.form-select.invalid,
+.form-textarea.invalid{
+  border-color: #e53e3e;
+  box-shadow: 0 0 0 3px rgba(229,62,62,.12);
+}
+.form-input.valid,
+.form-select.valid,
+.form-textarea.valid{
+  border-color: var(--green);
+  box-shadow: 0 0 0 3px rgba(39,174,96,.1);;
+}
+.field-error{font-size: 0.75rem;color: #e53e3e;margin-top: 0.35rem;display: none;}
+.field-error.show{display: block;}
 
-/* ==============================
-   FOOTER
-   ============================== */
+/* FOOTER*/
 footer { background:var(--bg); border-top:1px solid var(--border); padding:4rem 2rem 2rem; }
 .footer-grid {
   max-width: 1200px; margin: 0 auto;
@@ -901,9 +879,7 @@ footer { background:var(--bg); border-top:1px solid var(--border); padding:4rem 
 }
 .whatsapp-btn:hover .whatsapp-tooltip { opacity: 1; }
 
-/* ==============================
-   FEATURE 10 — COOKIE TOAST
-   ============================== */
+/* COOKIE TOAST */
 #cookieBanner {
   position: fixed;
   bottom: 2rem; left: 50%;
@@ -915,9 +891,9 @@ footer { background:var(--bg); border-top:1px solid var(--border); padding:4rem 
   display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;
   box-shadow: 0 8px 32px rgba(0,0,0,.3);
   transition: transform .5s cubic-bezier(.34,1.56,.64,1);
-  max-width: 580px; width: calc(100% - 4rem);
+  max-width: 580px; width: calc(100% - 4rem); pointer-events:none;
 }
-#cookieBanner.show { transform: translateX(-50%) translateY(0); }
+#cookieBanner.show { transform: translateX(-50%) translateY(0); pointer-events:auto;}
 .cookie-text { font-size:.85rem; color:var(--text2); flex:1; min-width:200px; }
 .cookie-text a { color:var(--blue); text-decoration:underline; }
 .cookie-buttons { display:flex; gap:.6rem; flex-shrink:0; }
@@ -963,9 +939,7 @@ footer { background:var(--bg); border-top:1px solid var(--border); padding:4rem 
 }
 .lightbox-close:hover { background: rgba(255,255,255,.2); }
 
-/* ==============================
-   RESPONSIVE
-   ============================== */
+/* RESPONSIVE */
 @media (max-width:1024px) {
   .about-grid, .contact-grid { grid-template-columns:1fr; gap:3rem; }
   .about-image-box { display:none; }
@@ -994,6 +968,10 @@ footer { background:var(--bg); border-top:1px solid var(--border); padding:4rem 
   .services-grid { grid-template-columns:1fr; }
   .masonry-grid  { columns:2; column-gap: 0.75rem; }
   .process-steps { grid-template-columns:1fr; }
+  .portfolio-overlay{ padding: 0.75rem}
+  .portfolio-category{padding: 0.55rem; margin-bottom: 0.15rem;}
+  .portfolio-title{font-size: 0.75rem;}
+  
 }
 @media (max-width:380px) {
  
