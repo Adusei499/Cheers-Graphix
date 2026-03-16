@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cheers Graphix | Bold Creative Design & Branding Studio — Kumasi, Ghana</title>
+<meta name="description" content="Award-winning creative design studio in Kumasi, Ghana. Bold branding, logo design, social media graphics, and digital experiences that captivate and convert.">
+<meta name="keywords" content="graphic design Ghana, branding Kumasi, logo design Ghana, social media graphics, creative agency Ghana">
+<meta name="author" content="Cheers Graphix">
+<link rel="icon" type="image/png" href="images/Cheers Graphics Logo Icon Alt.png">
+<link rel="shortcut icon" type="image/png" href="images/Cheers Graphics Logo Icon Alt.png">
+<link rel="apple-touch-icon" type="image/png" href="images/Cheers Graphics Logo Icon Alt.png">
+
+<!-- Open Graph / Social Media Preview  -->
+<meta property="og:title" content="Cheers Graphix | Bold Creative Design & Branding Studio">
+<meta property="og:description" content="Award-winning creative design studio in Kumasi, Ghana. We help brands grow through bold, purpose-driven design.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cheersgraphix.com">
+<meta property="og:image" content="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1200&q=80">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_GH">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@cheers_graphix">
+<meta name="twitter:title" content="Cheers Graphix | Bold Creative Design & Branding Studio">
+<meta name="twitter:description" content="Award-winning creative design studio in Kumasi, Ghana.">
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1200&q=80">
+
+<!-- Structured Data  -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["LocalBusiness","Organization"],
+  "name": "Cheers Graphix",
+  "description": "Creative design studio in Kumasi, Ghana specializing in branding, digital graphics and print design.",
+  "url": "https://cheersgraphix.com",
+  "telephone": "+233247030334",
+  "email": "cheersgraphix@gmail.com",
+  "founder":{
+    "@type":"Person",
+    "name": "Adu Poku Prince"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Kumasi",
+    "addressCountry": "GH"
+  },
+  "geo": {
+    "@type": "Geocordinates",
+    "latitude": 6.6885,
+    "longitude": -1.6244
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "Ghana"
+  },
+  "contactPoint":{
+    "@type": "ContactPoint",
+    "contactType": "customer service",
+    "telephone": "+233247030334",
+    "email": "cheersgraphix@gmail.com"
+  },
+  "sameAs": [
+    "https://www.instagram.com/cheers_graphix",
+    "https://x.com/cheers_graphix"
+  ],
+  "openingHours": "Mo-Fr 09:00-18:00"
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=Epilogue:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style/style.css">
+
+</head>
+<body>
+
+<!-- SPLASH SCREEN -->
+<div id="splashScreen">
+  <div class="splash-logo-box"><img src="CHEERS GRAP-1/PNG/Cheers Graphics Logo Horizontal Black.png"></div>
+  <div class="splash-loading-bar">
+    <div class="splash-loading-fill"></div>
+  </div>
+  <div class="splash-studio-name">Cheers Graphix</div>
+</div>
+
+<!-- Scroll progress bar -->
+<div id="scrollProgressBar"></div>
+
+<!-- Kente top stripe -->
+<div class="kente-top"></div>
+
+<!--  Back to Top Button -->
+<button id="backToTopBtn" aria-label="Back to top">↑</button>
+
+<!-- WhatsApp float button -->
+<a href="https://wa.me/233247030334" class="whatsapp-btn" target="_blank" title="Chat on WhatsApp">
+  💬
+  <span class="whatsapp-tooltip">Chat on WhatsApp</span>
+</a>
+
+<!-- Cookie Banner -->
+<div id="cookieBanner">
+  <p class="cookie-text">🍪 We use cookies to improve your experience on this site. <a href="#">Learn more</a></p>
+  <div class="cookie-buttons">
+    <button class="cookie-accept-btn" id="cookieAcceptBtn">Accept</button>
+    <button class="cookie-decline-btn" id="cookieDeclineBtn">Decline</button>
+  </div>
+</div>
+
+<!-- NAVIGATION -->
+<nav class="nav" id="mainNav">
+  <div class="nav-inner">
+    <a href="#home" class="nav-logo" onclick="return scrollToSection('home')">
+      <div class="logo-mark"><img src="images/Cheers Graphics Logo Horizontal Alt.png" alt="Cheers Graphix Logo"></div>
+    </a>
+    <ul class="nav-links" id="desktopNavLinks">
+      <li><a href="#home"      class="active" onclick="return scrollToSection('home')">Home</a></li>
+      <li><a href="#about"              onclick="return scrollToSection('about')">About</a></li>
+      <li><a href="#services"           onclick="return scrollToSection('services')">Services</a></li>
+      <li><a href="#portfolio"          onclick="return scrollToSection('portfolio')">Portfolio</a></li>
+      <li><a href="#contact"            onclick="return scrollToSection('contact')">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggleBtn" aria-label="Toggle theme">
+        <div class="toggle-thumb" id="themeToggleThumb">🌙</div>
+      </button>
+      <a href="#contact" class="nav-cta" onclick="return scrollToSection('contact')">Get Started</a>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-nav" id="mobileNavMenu">
+    <a href="#home"      onclick="return closeMobileNav('home')">Home</a>
+    <a href="#about"     onclick="return closeMobileNav('about')">About</a>
+    <a href="#services"  onclick="return closeMobileNav('services')">Services</a>
+    <a href="#portfolio" onclick="return closeMobileNav('portfolio')">Portfolio</a>
+    <a href="#contact"   onclick="return closeMobileNav('contact')">Contact</a>
+  </div>
+</nav>
+
+<!--  HERO -->
+<section id="home" class="hero">
+  <div class="hero-bg">
+    <div class="h-pattern"></div>
+    <div class="blob b1"></div>
+    <div class="blob b2"></div>
+    <div class="blob b3"></div>
+  </div>
+  <div class="hero-content">
+    <h1>
+      Partner with a<br>
+      <em id="typingTextEl"></em><span class="typed-cursor"></span><br>
+      digital agency.
+    </h1>
+    <p class="hero-sub">We help brands grow through strategic design, development, and bold digital experiences that captivate and convert.</p>
+    <div class="hero-btns">
+      <a href="#contact"   class="btn-primary" onclick="return scrollToSection('contact')">Get Started <span>→</span></a>
+      <a href="#portfolio" class="btn-ghost"   onclick="return scrollToSection('portfolio')">View Projects <span>↗</span></a>
+    </div>
+    <!-- Animated brand ticker -->
+    <div class="marquee-section">
+      <p class="marquee-label">Trusted by brands across Ghana &amp; beyond</p>
+      <div class="marquee-wrapper">
+        <div class="marquee-track">
+          <span class="brand-pill"><span class="brand-dot"></span>Compliance 360</span>
+          <span class="brand-pill"><span class="brand-dot"></span>Elkad Lodge</span>
+          <span class="brand-pill"><span class="brand-dot"></span>Birago Shito</span>
+          <span class="brand-pill"><span class="brand-dot"></span>Black Style</span>
+          <span class="brand-pill"><span class="brand-dot"></span>Sesea Kente</span>
+          <span class="brand-pill"><span class="brand-dot"></span>The Cecily Sean</span>
+          <span class="brand-pill"><span class="brand-dot"></span>Tina P Consultancy</span>
+          <span class="brand-pill"><span class="brand-dot"></span>Luxe Bites</span>
+          <span class="brand-pill"><span class="brand-dot"></span>Kwabena Darko's Couture</span>
+          <span class="brand-pill"><span class="brand-dot"></span>God's Character</span>
+          <!-- Duplicate  for seamless loop -->
+          <span class="brand-pill"><span class="brand-dot"></span>Compliance 360</span>
+          <span class="brand-pill"><span class="brand-dot"></span>Elkad Lodge</span>
+          <span class="brand-pill"><span class="brand-dot"></span>Birago Shito</span>
+          <span class="brand-pill"><span class="brand-dot"></span>Black Style</span>
+          <span class="brand-pill"><span class="brand-dot"></span>Sesea Kente</span>
+          <span class="brand-pill"><span class="brand-dot"></span>The Cecily Sean</span>
+          <span class="brand-pill"><span class="brand-dot"></span>Tina P Consultancy</span>
+          <span class="brand-pill"><span class="brand-dot"></span>Luxe Bites</span>
+          <span class="brand-pill"><span class="brand-dot"></span>Kwabena Darko's Couture</span>
+          <span class="brand-pill"><span class="brand-dot"></span>God's Character</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--  — Wave Divider: Hero → About -->
+<div class="wave-divider" style="background:var(--bg);">
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="var(--bg2)"/>
+  </svg>
+</div>
+
+<!-- ABOUT -->
+<section id="about" class="about" style="padding-top:2rem;">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div>
+        <div class="label-pill reveal">About Cheers Graphix</div>
+        <h2 class="section-heading reveal delay-1">We craft brands that <em>refuse</em> to be ignored.</h2>
+        <div class="kente-divider reveal delay-2"></div>
+        <p class="section-sub reveal delay-2">A creative powerhouse rooted in Ghanaian culture, dedicated to transforming businesses through bold, purpose-driven design.</p>
+        <p style="margin-top:1.25rem;color:var(--text2);font-size:.97rem;line-height:1.9;" class="reveal delay-3">Born in Kumasi — the cultural heartbeat of Ghana — we carry that energy into every project. Our work blends African boldness with global precision.</p>
+        <div class="stats-grid">
+          <div class="stat-card reveal delay-1"><span class="stat-number" data-target="150" data-suffix="+">0</span><div class="stat-label">Projects Completed</div></div>
+          <div class="stat-card reveal delay-2"><span class="stat-number" data-target="10"  data-suffix="+">0</span><div class="stat-label">Years Experience</div></div>
+          <div class="stat-card reveal delay-3"><span class="stat-number" data-target="99"  data-suffix="%">0</span><div class="stat-label">Client Satisfaction</div></div>
+          <div class="stat-card reveal delay-4"><span class="stat-number" data-target="80"  data-suffix="+">0</span><div class="stat-label">Global Clients</div></div>
+        </div>
+      </div>
+      <div class="about-image-box reveal delay-2">
+        <img src="images/Cheers Graphics Logo Icon Alt.png" alt="Creative workspace" loading="lazy">
+        <div class="about-image-overlay"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Wave Divider: About → Services -->
+<div class="wave-divider flipped" style="background:var(--bg2);">
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,40 C480,0 960,80 1440,40 L1440,80 L0,80 Z" fill="var(--bg)"/>
+  </svg>
+</div>
+
+<!-- SERVICES -->
+<section id="services" class="services" style="padding-top:2rem;">
+  <div class="section-inner">
+    <div class="services-header">
+      <div class="label-pill reveal">What We Do</div>
+      <h2 class="section-heading reveal delay-1">Design solutions for <em>every need</em></h2>
+      <div class="kente-divider reveal delay-2"></div>
+      <p class="section-sub reveal delay-2">Comprehensive creative services to elevate your brand at every touchpoint.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal delay-1"><div class="service-icon">💻</div><div class="service-title">Web Design</div><p class="service-desc">Beautiful, conversion-focused websites built to represent your brand and turn visitors into loyal customers.</p><span class="service-arrow">→</span></div>
+      <div class="service-card reveal delay-2"><div class="service-icon">📱</div><div class="service-title">Social Media Graphics</div><p class="service-desc">Scroll-stopping visuals custom-designed for every platform your audience lives on.</p><span class="service-arrow">→</span></div>
+      <div class="service-card reveal delay-3"><div class="service-icon">✦</div><div class="service-title">Logo Design</div><p class="service-desc">Timeless, versatile logos that capture your brand's essence and scale across every application.</p><span class="service-arrow">→</span></div>
+      <div class="service-card reveal delay-1"><div class="service-icon">🎨</div><div class="service-title">Brand Strategy &amp; Identity</div><p class="service-desc">End-to-end brand systems — strategy, visual identity, guidelines, and brand voice.</p><span class="service-arrow">→</span></div>
+      <div class="service-card reveal delay-2"><div class="service-icon">🖨️</div><div class="service-title">Print Design</div><p class="service-desc">From business cards to billboards — materials that make your brand tangible and unforgettable.</p><span class="service-arrow">→</span></div>
+      <div class="service-card reveal delay-3"><div class="service-icon">🚀</div><div class="service-title">Creative Strategy</div><p class="service-desc">We align every creative decision with your business goals so your design works as hard as you do.</p><span class="service-arrow">→</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- Wave Divider: Services → Process -->
+<div class="wave-divider" style="background:var(--bg);">
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,20 C240,70 480,0 720,40 C960,80 1200,10 1440,50 L1440,80 L0,80 Z" fill="var(--bg2)"/>
+  </svg>
+</div>
+
+<!--  PROCESS SECTION -->
+<section id="process" class="process" style="padding-top:2rem;">
+  <div class="section-inner">
+    <div class="process-header">
+      <div class="label-pill reveal">How We Work</div>
+      <h2 class="section-heading reveal delay-1">Our <em>process</em></h2>
+      <div class="kente-divider reveal delay-2"></div>
+      <p class="section-sub reveal delay-2">A clear, collaborative process so you always know what to expect — from first message to final delivery.</p>
+    </div>
+    <div class="process-steps">
+      <div class="process-step reveal delay-1">
+        <div class="step-number">01</div>
+        <div class="step-icon">☕</div>
+        <div class="step-title">Discovery</div>
+        <p class="step-desc">We start with a deep-dive call to understand your brand, goals, audience, and vision. No templates — every project starts from scratch.</p>
+        
+      </div>
+      <div class="process-step reveal delay-2">
+        <div class="step-number">02</div>
+        <div class="step-icon">✏️</div>
+        <div class="step-title">Concept</div>
+        <p class="step-desc">We develop bold creative concepts tailored to your brand strategy — presenting options with clear rationale behind each direction.</p>
+        
+      </div>
+      <div class="process-step reveal delay-3">
+        <div class="step-number">03</div>
+        <div class="step-icon">🔄</div>
+        <div class="step-title">Revisions</div>
+        <p class="step-desc">You give feedback, we refine. We work in rounds until the design is perfectly aligned with your brand identity and business goals.</p>
+        
+      </div>
+      <div class="process-step reveal delay-4">
+        <div class="step-number">04</div>
+        <div class="step-icon">🚀</div>
+        <div class="step-title">Delivery</div>
+        <p class="step-desc">Final files delivered in every format you need — print-ready, web-optimised, brand guidelines included. Ready to launch.</p>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Wave Divider: Process → Portfolio -->
+<div class="wave-divider flipped" style="background:var(--bg2);">
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,50 C360,10 720,70 1080,30 C1260,10 1380,60 1440,40 L1440,80 L0,80 Z" fill="var(--bg)"/>
+  </svg>
+</div>
+
+<!-- PORTFOLIO   — 3D tilt applied via JS) -->
+<section id="portfolio" class="portfolio" style="padding-top:2rem;">
+  <div class="section-inner">
+    <div class="portfolio-header">
+      <div>
+        <div class="label-pill reveal">Our Work</div>
+        <h2 class="section-heading reveal delay-1">Recent <em>Projects</em></h2>
+      </div>
+      <div class="filter-row reveal delay-2">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="branding">Branding</button>
+        <button class="filter-btn" data-filter="logo">Logo</button>
+        <button class="filter-btn" data-filter="social">Social</button>
+        <button class="filter-btn" data-filter="print">Print</button>
+      </div>
+    </div>
+    <div class="masonry-grid" id="masonryGrid">
+      <div class="portfolio-card" data-category="branding"><img src="images/IMG_7781.png" alt="Brand Identity" loading="lazy"><div class="portfolio-overlay"><div class="portfolio-category">Branding</div><div class="portfolio-title">Elkad Lodge</div></div></div>
+      <div class="portfolio-card" data-category="logo"><img src="images/IMG_9612.jpg" alt="Logo Design" loading="lazy"><div class="portfolio-overlay"><div class="portfolio-category">Logo Design</div><div class="portfolio-title">Kwabena Darko's Couture</div></div></div>
+      <div class="portfolio-card" data-category="branding"><img src="images/SHITO.jpg" alt="Food Brand" loading="lazy"><div class="portfolio-overlay"><div class="portfolio-category">Branding</div><div class="portfolio-title">Birago Shito</div></div></div>
+      <div class="portfolio-card" data-category="social"><img src="images/IMG_9431.jpg" alt="Social Media" loading="lazy"><div class="portfolio-overlay"><div class="portfolio-category">Social Media</div><div class="portfolio-title">Independence Day Design</div></div></div>
+      <div class="portfolio-card" data-category="print"><img src="images/9385cb7b-142e-4c1a-bd88-f22699f79889.jpg" alt="Print Poster" loading="lazy"><div class="portfolio-overlay"><div class="portfolio-category">Print Design</div><div class="portfolio-title">Elkad Lodge</div></div></div>
+      <div class="portfolio-card" data-category="logo"><img src="images/IMG_2490.PNG" alt="Consultancy Logo" loading="lazy"><div class="portfolio-overlay"><div class="portfolio-category">Logo Design</div><div class="portfolio-title">Sesea Kente</div></div></div>
+      <div class="portfolio-card" data-category="social"><img src="images/IMG_9471.jpg" alt="Social Media" loading="lazy"><div class="portfolio-overlay"><div class="portfolio-category">Social Media</div><div class="portfolio-title">Social Media</div></div></div>
+      <div class="portfolio-card" data-category="social"><img src="images/TT 33.JPG" alt="Kente Social" loading="lazy"><div class="portfolio-overlay"><div class="portfolio-category">Social Media</div><div class="portfolio-title">Tina P Consultancy</div></div></div>
+      <div class="portfolio-card" data-category="print"><img src="images/print1.jpg" alt="Print Poster" loading="lazy"><div class="portfolio-overlay"><div class="portfolio-category">Print Design</div><div class="portfolio-title">Funeral Events</div></div></div>
+      <div class="portfolio-card" data-category="print"><img src="images/IMG_1768.jpg" alt="Event Poster" loading="lazy"><div class="portfolio-overlay"><div class="portfolio-category">Print Design</div><div class="portfolio-title">Elkad Lodge</div></div></div>
+      <div class="portfolio-card" data-category="logo"><img src="images/IMG_2228.png" alt="Food Logo" loading="lazy"><div class="portfolio-overlay"><div class="portfolio-category">Logo Design</div><div class="portfolio-title">The Cecily Sean</div></div></div>
+      <div class="portfolio-card" data-category="social"><img src="images/IMG_1609.jpg" alt="Social Campaign" loading="lazy"><div class="portfolio-overlay"><div class="portfolio-category">Social Media</div><div class="portfolio-title">Compliance 360</div></div></div>
+      <div class="portfolio-card" data-category="branding"><img src="images/IMG_8427.jpg" alt="Fashion Brand" loading="lazy"><div class="portfolio-overlay"><div class="portfolio-category">Branding</div><div class="portfolio-title">God's Character</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Wave Divider: Portfolio → Testimonials -->
+<div class="wave-divider" style="background:var(--bg);">
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="var(--bg2)"/>
+  </svg>
+</div>
+
+<!--  TESTIMONIALS
+     -->
+<section class="testimonials" style="padding-top:2rem;">
+  <div class="section-inner">
+    <div class="testimonials-header">
+      <div class="label-pill reveal">Client Love</div>
+      <h2 class="section-heading reveal delay-1">What our <em>clients say</em></h2>
+      <div class="kente-divider reveal delay-2"></div>
+      <p class="section-sub reveal delay-2">Real words from brands we've helped grow across Ghana and beyond.</p>
+    </div>
+    <div class="reveal delay-2">
+      <div class="testimonial-wrapper">
+        <div class="testimonial-track" id="testimonialTrack">
+          <div class="testimonial-card"><p class="testimonial-quote">Cheers Graphix completely transformed our brand. We went from looking like a bedroom startup to a serious company overnight. The logo alone tripled our client enquiries.</p><div class="testimonial-footer"><div class="testimonial-author"><div class="author-avatar">JM</div><div><div class="author-name">James Mitchell</div><div class="author-role">CEO, TechFlow</div></div></div><div class="star-rating">★★★★★</div></div></div>
+          <div class="testimonial-card"><p class="testimonial-quote">The social media graphics they created stopped the scroll instantly. Our engagement went up 300% in the first month. Absolute professionals who always deliver.</p><div class="testimonial-footer"><div class="testimonial-author"><div class="author-avatar">SR</div><div><div class="author-name">Sofia Reyes</div><div class="author-role">Founder, Urban Threads</div></div></div><div class="star-rating">★★★★★</div></div></div>
+          <div class="testimonial-card"><p class="testimonial-quote">Working with Cheers Graphix felt like having a world-class creative director on our team. They understood our vision immediately and delivered beyond what we imagined.</p><div class="testimonial-footer"><div class="testimonial-author"><div class="author-avatar">AK</div><div><div class="author-name">Ama Kofi</div><div class="author-role">Marketing Director, Nexus Consulting</div></div></div><div class="star-rating">★★★★★</div></div></div>
+          <div class="testimonial-card"><p class="testimonial-quote">Fast, professional, incredibly talented. Our new website brought in more leads in 2 weeks than the old one did in 6 months. Worth every single pesewa.</p><div class="testimonial-footer"><div class="testimonial-author"><div class="author-avatar">DL</div><div><div class="author-name">Daniel Lee</div><div class="author-role">Owner, Zenith Fitness</div></div></div><div class="star-rating">★★★★★</div></div></div>
+          <div class="testimonial-card"><p class="testimonial-quote">I gave them a rough idea and they came back with something that made me emotional. They don't just design — they tell your story visually. Highly, highly recommend.</p><div class="testimonial-footer"><div class="testimonial-author"><div class="author-avatar">PO</div><div><div class="author-name">Priya Osei</div><div class="author-role">Founder, Bloom Cafe</div></div></div><div class="star-rating">★★★★★</div></div></div>
+        </div>
+      </div>
+      <div class="carousel-controls">
+        <button class="carousel-btn" id="prevSlideBtn">←</button>
+        <div class="carousel-dots" id="carouselDots"></div>
+        <button class="carousel-btn" id="nextSlideBtn">→</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Wave Divider: Testimonials → FAQ -->
+<div class="wave-divider flipped" style="background:var(--bg2);">
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 C480,80 960,0 1440,50 L1440,80 L0,80 Z" fill="var(--bg2)"/>
+  </svg>
+</div>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="section-inner">
+    <div class="faq-layout">
+      <div>
+        <div class="label-pill reveal">FAQ</div>
+        <h2 class="section-heading reveal delay-1">Questions <em>answered</em></h2>
+        <div class="kente-divider reveal delay-2"></div>
+        <p class="section-sub reveal delay-2">Still curious? Reach out and we'll reply within 24 hours.</p>
+        <br>
+        <a href="#contact" class="btn-primary" style="display:inline-flex;margin-top:1rem;" onclick="return scrollToSection('contact')">Ask Us Anything →</a>
+      </div>
+      <div class="reveal delay-2">
+        <div class="faq-item"><button class="faq-question">What services do you offer?<span class="faq-icon">+</span></button><div class="faq-answer">We offer a full suite: <strong>logo design, brand identity, social media graphics, web design, print design, and creative strategy</strong>. Single asset or full rebrand — we handle it all.</div></div>
+        <div class="faq-item"><button class="faq-question">Can I request revisions?<span class="faq-icon">+</span></button><div class="faq-answer">Absolutely!, We include<strong> revision rounds in every project</strong> to ensure the final design aligns perfectly with your vision.</div></div>
+        <div class="faq-item"><button class="faq-question">What industries do you work with?<span class="faq-icon">+</span></button><div class="faq-answer">We work with a<strong> wide range of industries </strong>including small businesses, corporate brands, real estate, retail and food industries. Our approach is adaptable allowing us to desgin solutions tailored to each industry's unique needs</div></div>
+        <div class="faq-item"><button class="faq-question">What does your process look like?<span class="faq-icon">+</span></button><div class="faq-answer">We start with a consultation to understand your <strong>brands and goals</strong>, followed by concept development, design creation, revision and final delivery of all approved assets.</div></div>
+        <div class="faq-item"><button class="faq-question">Do you work with clients outside Ghana?<span class="faq-icon">+</span></button><div class="faq-answer">Absolutely. While proudly based in Kumasi, we work with clients <strong>locally and internationally</strong>. Thanks to digital collaboration tools, we can communicate, share designs and manage projects seamlessly with clients anywhere in the world. </div></div>
+        <div class="faq-item"><button class="faq-question">What do you need from me to get started??<span class="faq-icon">+</span></button><div class="faq-answer">We typically need <strong> basic information about your business, brand preferences, inspiration examples and project goals </strong>to start designing effectively.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Wave Divider: FAQ → CTA -->
+<div class="wave-divider" style="background:var(--bg2);">
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,60 C240,20 480,70 720,40 C960,10 1200,60 1440,30 L1440,80 L0,80 Z" fill="var(--bg)"/>
+  </svg>
+</div>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="section-inner">
+    <div class="cta-inner">
+      <div class="cta-ghost-text">CHEERS</div>
+      <div class="label-pill reveal" style="margin:0 auto 1.5rem;">Ready to Begin?</div>
+      <h2 class="section-heading reveal delay-1" style="font-size:clamp(2.5rem,6vw,5rem);">Let's build something <em>amazing</em> together.</h2>
+      <p class="section-sub reveal delay-2" style="margin:1.5rem auto 3rem;max-width:480px;">Whether you're starting fresh or ready to level up — we're here. Drop a message and let's create magic.</p>
+      <div class="reveal delay-3">
+        <a href="#contact" class="btn-primary" style="display:inline-flex;" onclick="return scrollToSection('contact')">Start Your Project →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Wave Divider: CTA → Contact -->
+<div class="wave-divider flipped" style="background:var(--bg);">
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="var(--bg2)"/>
+  </svg>
+</div>
+
+<!-- CONTACT -->
+<section id="contact" class="contact" style="padding-top:2rem;">
+  <div class="section-inner">
+    <div class="contact-grid">
+      <div>
+        <div class="label-pill reveal">Get In Touch</div>
+        <h2 class="section-heading reveal delay-1">Let's create something <em>amazing.</em></h2>
+        <div class="kente-divider reveal delay-2"></div>
+        <p class="section-sub reveal delay-2">Whether you have a project in mind or just want to chat, we'd love to hear from you.</p>
+        <div class="contact-details-list">
+          <div class="contact-detail reveal delay-1"><div class="contact-icon">📧</div><a href="mailto:cheersgraphix@gmail.com">cheersgraphix@gmail.com</a></div>
+          <div class="contact-detail reveal delay-2"><div class="contact-icon">📱</div><a href="tel:+233247030334">+233 24-703-0334</a></div>
+          <div class="contact-detail reveal delay-3"><div class="contact-icon">📍</div><span>Kumasi, Ghana</span></div>
+        </div>
+        <div class="social-row reveal delay-4">
+          <a href="https://www.instagram.com/cheers_graphix" class="social-btn" target="_blank"><img src="images/IMG_1413.JPG"></a>
+          <a href="https://x.com/cheers_graphix"             class="social-btn" target="_blank"><img src="images/IMG_1411.PNG"></a>
+          <a href="https://wa.me/233247030334"               class="social-btn" target="_blank"><img src="images/IMG_2102.PNG"></a>
+          <a href="mailto:cheersgraphix@gmail.com"           class="social-btn"><img src="images/IMG_2103.PNG"></a>
+        </div>
+      </div>
+      <div class="contact-form-box reveal delay-2">
+        <form id="contactForm">
+          <div class="form-row">
+            <div class="form-group"><label class="form-label" for="nameInput">Your Name</label><input class="form-input" type="text" id="nameInput" name="name" placeholder="Kofi Mensah" required></div>
+            <div class="form-group"><label class="form-label" for="emailInput">Email Address</label><input class="form-input" type="email" id="emailInput" name="email" placeholder="kofi@example.com" required></div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="serviceSelect">Service Needed</label>
+            <select class="form-select" id="serviceSelect" name="service" required>
+              <option value="">Select a service</option>
+              <option>Branding &amp; Identity</option>
+              <option>Logo Design</option>
+              <option>Social Media Graphics</option>
+              <option>Web Design</option>
+              <option>Print Design</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group"><label class="form-label" for="messageTextarea">Project Details</label><textarea class="form-textarea" id="messageTextarea" name="message" placeholder="Tell us about your project, goals, and timeline..." required></textarea></div>
+          <button type="submit" class="form-submit-btn" id="submitButton">Send Message →</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo-mark"><img src="CHEERS GRAP-1/PNG/Cheers Graphics Logo Horizontal Black.png"></div>
+      <p>Bold creative design for brands that refuse to blend in. Proudly rooted in Ghana, serving the world.</p>
+      <div class="social-row" style="margin-top:1.25rem;">
+        <a href="https://www.instagram.com/cheers_graphix" class="social-btn" target="_blank"><img src="images/IMG_1413.JPG"></a>
+        <a href="https://x.com/cheers_graphix"             class="social-btn" target="_blank"><img src="images/IMG_1411.PNG"></a>
+        <a href="https://wa.me/233247030334"               class="social-btn" target="_blank"><img src="images/IMG_2102.PNG"></a>
+      </div>
+    </div>
+    <div class="footer-column">
+      <h5>Navigation</h5>
+      <ul>
+        <li><a href="#home"      onclick="return scrollToSection('home')">Home</a></li>
+        <li><a href="#about"     onclick="return scrollToSection('about')">About</a></li>
+        <li><a href="#services"  onclick="return scrollToSection('services')">Services</a></li>
+        <li><a href="#portfolio" onclick="return scrollToSection('portfolio')">Portfolio</a></li>
+        <li><a href="#contact"   onclick="return scrollToSection('contact')">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h5>Services</h5>
+      <ul>
+        <li><a href="#services" onclick="return scrollToSection('services')">Branding</a></li>
+        <li><a href="#services" onclick="return scrollToSection('services')">Logo Design</a></li>
+        <li><a href="#services" onclick="return scrollToSection('services')">Web Design</a></li>
+        <li><a href="#services" onclick="return scrollToSection('services')">Social Media</a></li>
+        <li><a href="#services" onclick="return scrollToSection('services')">Print Design</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h5>Contact</h5>
+      <ul>
+        <li><a href="mailto:cheersgraphix@gmail.com">cheersgraphix@gmail.com</a></li>
+        <li><a href="tel:+233247030334">+233 24-703-0334</a></li>
+        <li>Kumasi, Ghana </li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Cheers Graphix. Crafted with ❤️ in Kumasi, Ghana.</p>
+    <div class="kente-chips">
+      <div class="kente-chip" style="background:#f5a623;"></div>
+      <div class="kente-chip" style="background:#c0392b;"></div>
+      <div class="kente-chip" style="background:#27ae60;"></div>
+      <div class="kente-chip" style="background:#115ac8;"></div>
+    </div>
+  </div>
+</footer>
+
+<!-- Lightbox overlay -->
+<div class="lightbox" id="lightboxOverlay">
+  <button class="lightbox-close" id="lightboxCloseBtn">×</button>
+  <img id="lightboxImage" src="" alt="">
+</div>
+
+
+<script src="script/script.js"></script>
+</body>
+</html>
