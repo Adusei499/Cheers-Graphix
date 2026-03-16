@@ -116,36 +116,35 @@
   const themeToggleThumb = document.getElementById('themeToggleThumb');
   const devicePrefersDark = window.matchMedia('(prefers-color-scheme: dark)');
 
-  function applyTheme(theme) {
-    htmlElement.setAttribute('data-theme', theme);
-    themeToggleThumb.textContent = theme === 'dark' ? '🌙' : '☀️';
+  function syncThemeUI() {
+    const currentTheme = htmlElement.getAttribute('data-theme');
+    if(themeToggleThumb){
+      themeToggleThumb.textContent = theme === 'dark' ? '🌙' : '☀️';
+    } 
   };
 
-  const savedTheme = localStorage.getItem('cg-theme');
+  syncThemeUI();
+
+  document.getElementById('themeToggleBtn').addEventListener('click', function() {
+    const currentTheme =  htmlElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+
+    htmlElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('cg-theme', newTheme);
+    syncThemeUI();
+  });
 
   // Apply saved theme on page load
-  if (savedTheme ) {
-    applyTheme(savedTheme);
-  } else if(devicePrefersDark.matches) {
-    applyTheme('dark');
-  } else{
-    applyTheme('light')
-  };
-
   devicePrefersDark.addEventListener('change', function(event) {
     const userHasSavedPreference = localStorage.getItem('cg-theme');
-    if(!userHasSavedPreference) {
-      applyTheme(event.matches ? 'dark' : 'light');
+    if(!localStorage.getItem('cg-theme')) {
+      const systemTheme = event.matches ? 'dark': 'light';
+      htmlElement.setAttribute('data-theme', systemTheme);
+      syncThemeUI();
     }
   });
 
-  document.getElementById('themeToggleBtn').addEventListener('click', function() {
-    const currentTheme  = htmlElement.getAttribute('data-theme');
-    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
 
-    applyTheme(newTheme);
-    localStorage.setItem('cg-theme', newTheme);
-  });
 
 
   /* TYPING ANIMATION */
